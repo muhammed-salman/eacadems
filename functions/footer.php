@@ -16,9 +16,9 @@
 echo '</div>';
 echo '<div id="footer">';
 echo '<center>'
-        . '<a style="color:inherit; background-color:transparent; background-image:none; border:0;" href="http://aiktc.org/school-of-engineering/computer-engineering/">&copy; Muhammed Salman Shamsi</a>';
-echo '<a style="color:inherit; background-color:transparent; background-image:none; border:0;"href="http://www.flaticon.com">Dashboard Icons designed by Freepik & others</a>'
-. '<a style="color:inherit; background-color:transparent; background-image:none; border:0;" href="/ecadems/notice.php">Academic Public License</a>';
+        . '<a href="http://aiktc.org/school-of-engineering/computer-engineering/">&copy; Muhammed Salman Shamsi</a>';
+echo '<a href="http://www.flaticon.com">Dashboard Icons designed by Freepik & others</a>'
+. '<a href="/ecadems/notice.php">Academic Public License</a>';
 echo '</center>';
 echo '</div>';
 echo '</body>';

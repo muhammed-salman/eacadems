@@ -73,8 +73,8 @@ echo <<<_END
                 <div>
                      <label class="form-label">Type</label>
                      <span class="form-input">   
-                        <input type="radio" class="attendtype form-radio" name="cthpr" value=1 required><label class="form-label">Theory</label>
-                        <input type="radio" class="attendtype form-radio" name="cthpr" value=0 required><label class="form-label">Practical</label>
+                        <label class="form-label"><input type="radio" class="attendtype form-radio" name="cthpr" value=1 required>Theory</label>
+                        <label class="form-label"><input type="radio" class="attendtype form-radio" name="cthpr" value=0 required>Practical</label>
                      </span>   
                 </div>
                                 

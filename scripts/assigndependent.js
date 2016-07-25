@@ -534,7 +534,8 @@ $(document).ready(function () {
                 var count = parseInt(componos[l].value);
                 var j = 1, cavg = 0, avgCount = 0;
                 while (j <= count) {
-                    var marksclass = (rollno[i].value) + "_" + coid + "_" + j + "_marks";
+                    var marksclass = (rollno[i].textContent) + "_" + coid + "_" + j + "_marks";
+                    //alert(marksclass);
                     var compo_marks = document.getElementById(marksclass);
                     cm = parseInt(compo_marks.value);
 
@@ -548,7 +549,7 @@ $(document).ready(function () {
                 if (cavg != 0) {
                     cavg = cavg / avgCount;
                 }
-                var avgclass = (rollno[i].value) + "_" + coid + "_avg";
+                var avgclass = (rollno[i].textContent) + "_" + coid + "_avg";
                 var compo_avg = document.getElementById(avgclass);
                 compo_avg.value = cavg;
                 ctot += gavg / count;
@@ -1253,6 +1254,45 @@ $(document).ready(function () {
             }
         });
     });
+    
+    $(".nav-menu").click(function(e){
+       $(".menu").toggleClass('responsive'); 
+    });
+    
+    $(".slidebutton").click(function () {
+
+        $title = $(this);
+        //getting the next element
+        $content = $title.next();
+        $title.find(".arrow-down, .arrow-up").toggleClass("arrow-down arrow-up");
+        //open up the content needed - toggle the slide- if visible, slide up, if not slidedown.
+        $content.slideToggle(500, function () {
+            //execute this after slideToggle is done
+            //change text of header based on visibility of content div
+            //$infobox.text(function () {
+                //change text based on condition
+            //  return $content.is(":visible") ? "Collapse" : "Expand";
+        });
+    });
+
+    $(window).resize(function(){
+        var $window = $(this);
+    
+        if ($window.width() <= 1024) {
+            $arrowup = $('.arrow-up');
+            $arrowup.removeClass('arrow-up')
+            $arrowup.addClass('arrow-down');
+        }
+        else{
+            $arrowdown = $('.arrow-down');
+            $arrowdown.removeClass('arrow-down')
+            $arrowdown.addClass('arrow-up');
+        }
+    });
+            //$html.removeClass('mobile');
+     
+        //$window.resize(resize).trigger('resize');
+
     /* Table highlight
      var allCells = $("td, th");
      

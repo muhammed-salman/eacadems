@@ -140,43 +140,42 @@ updateCA();
                         
                         if($prevRoll!=$row[rollno]){
                           if($prevRoll!=-1){
-                            echo '<td  style="background-color:#66ff66;"><input type="text" class="ctotal" name="'.$prevRoll.'_total" id="'.$prevRoll.'_total" value="'.round($total, 0, PHP_ROUND_HALF_UP).'" style="border:0px; width:100%; margin:0; text-align: center; background:transparent;" readonly="true"/></td>';
+                            echo '<td  style="background-color:#66ff66;"><input type="text" class="ctotal" name="'.$prevRoll.'_total" id="'.$prevRoll.'_total" value="'.round($total, 0, PHP_ROUND_HALF_UP).'"  readonly="true"/></td>';
                             echo '</tr>';
                             $total=0;
                             $srCount++;
                           }
                             echo '<tr>';
                             echo '<td >'.$srCount.'</td>';
-                            echo '<td  width="6.5%">'
-                            . '<input type="text" class="ucarollno" name="'.$row[rollno].'" id="'.$row[rollno].'" value="'.$row['rollno'].'" style="border: 0; width:100%; margin:0; text-align: center; background: transparent;" readonly="true"/></td>';
+                            echo '<td  width="6.5%" class="ucarollno">'.$row['rollno'].'</td>';
                             echo '<td >'.$row['name'].'</td>';
                             $prevRoll=$row['rollno'];
                         }
                          
                         if($prevRoll==$row['rollno']){
                          echo '<td >'
-                         . '<input type="number" class="ucamarks" min=0 max='.$row['weightage'].'  name="'.$row[rollno].'_'.$row[compo_id].'_'.$row[compo_no].'_marks" id="'.$row[rollno].'_'.$row[compo_id].'_'.$row[compo_no].'_marks" value="'.$row['marks'].'" style="width:100%; margin:0; text-align: center;';
+                         . '<input type="number" class="ucamarks" min=0 max='.$row['weightage'].'  name="'.$row[rollno].'_'.$row[compo_id].'_'.$row[compo_no].'_marks" id="'.$row[rollno].'_'.$row[compo_id].'_'.$row[compo_no].'_marks" value="'.$row['marks'].'"';
                              if($row['marks']!=NULL || $row['marks']!=""){
-                                 echo  '" readonly="readonly"/></td>';
+                                 echo  ' readonly="readonly"/></td>';
                                   $compoTotal+=intval($row['marks']);
                                   $compoCnt++;
                              }
                             else {
-                                echo  '" /></td>';
+                                echo  '/></td>';
                             }
                             
                             if($row[compo_no]==$row[compo_nos]){
-                              echo '<td  width="4%" style="background-color:lightsalmon;"><input type="text" name="'.$row[rollno].'_'.$row[compo_id].'_avg" id="'.$row[rollno].'_'.$row[compo_id].'_avg" value="'. round(($compoTotal/$compoCnt),2,PHP_ROUND_HALF_UP).'" style="border:0px; width:100%; margin:0; text-align: center; background: transparent;" readonly="true"/></td>';                
+                              echo '<td  width="4%" style="background-color:lightsalmon;"><input type="text" name="'.$row[rollno].'_'.$row[compo_id].'_avg" id="'.$row[rollno].'_'.$row[compo_id].'_avg" value="'. round(($compoTotal/$compoCnt),2,PHP_ROUND_HALF_UP).'" readonly="true"/></td>';                
                               $total+=($compoTotal/$row[compo_nos]);
                               $compoTotal=0;
                               $compoCnt=0;
                             } 
                         }  
                     }
-                    echo '<td  width="3%" style="background-color:#66ff66;"><input type="text" class="ctotal" name="'.$prevRoll.'_total" id="'.$prevRoll.'_total" value="'.round($total, 0, PHP_ROUND_HALF_UP).'" style="width:100%; margin:0; text-align: center; background: transparent;border:0px;" readonly="true"/></td>';
+                    echo '<td  width="3%" style="background-color:#66ff66;"><input type="text" class="ctotal" name="'.$prevRoll.'_total" id="'.$prevRoll.'_total" value="'.round($total, 0, PHP_ROUND_HALF_UP).'" readonly="true"/></td>';
                     echo '</tr>';   
                     echo '<tr>';
-                    echo '<td  colspan="'.$columns.'"> <input type="submit" class="button" value="Update"/></td>';
+                    echo '<td  colspan="'.$columns.'"> <input type="submit"  value="Update"/></td>';
                     echo '</tr>';  
                     echo '</table>';
                     echo '</form></div>';                   

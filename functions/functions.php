@@ -11,6 +11,8 @@
 *   [license text: http://www.omnetpp.org/intro/license]   
 *   Author: MUhammed Salman Shamsi
 */
+//echo __ROOT__.'/functions/connect.php';
+//require_once(__ROOT__.'/functions/connect.php'); 
 require_once 'functions/connect.php';
 
 function createTable($name, $query)
@@ -1545,7 +1547,7 @@ function updateCA()
             $ucafac_id=$_POST['ucafac_id'];
             $ucabatch=$_POST['ucabatch'];
             $errflag=0;
-            print_r(count($_POST));
+            //print_r(count($_POST));
                   $query="select c.*,s.name,s.batch,t.weightage,t.compo_nos from CA c natural join Student s natural join TwCompoWeight t where c.course_id='".$ucacourse."' and c.year='".$ucayear."' and s.batch in ".$ucabatch." order by rollno asc,compo_nos desc,compo_no asc";         
                   $result=  queryMysql($query);
                   if(mysql_num_rows($result)==0){

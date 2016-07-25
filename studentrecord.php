@@ -19,7 +19,7 @@ if($loggedin){
     if($_SESSION['grid']==='3'||$_SESSION['grid']==='5'||$_SESSION['grid']==='2'||$_SESSION['grid']==='6'){
                      
 ?>
-    <div id="right">    
+    <div id="right" style="width:100%;">    
         <form method="post" id="form1">
           
               <img class="search-img" src="images/search_logo.png"/>

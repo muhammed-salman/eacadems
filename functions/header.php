@@ -15,7 +15,8 @@
 
 session_start();
 echo "<!DOCTYPE html>\n<html>\n<head><meta charset='UTF-8'>";
-
+//define('__ROOT__', dirname(dirname(__FILE__))); 
+//require_once(__ROOT__.'/functions/functions.php'); 
 require_once 'functions/functions.php';
 
 $userstr='(Guest)';
@@ -36,6 +37,7 @@ echo "<title>$appname$user</title>".
      "<script src='scripts/validate_functions.js'></script>".
      "<script src='scripts/validate.js'></script>".
      "<script src='scripts/misc.js'></script>".
+     '<meta name="viewport" content="width=device-width,initial-scale=1" />'.
      " <noscript>
       Your browser doesn't support or has disabled JavaScript
     </noscript>". 
@@ -54,12 +56,16 @@ echo "<title>$appname$user</title>".
         . "</div>";
         
 if($loggedin){
-    echo "<ul class='menu'>"
+            
+    echo  "<ul class='menu'>"
             ."<span id='headerDate'>".date('d-m-Y')." (".academic_year().")</span>"
-            . "<span id='headerapp'>$appname$userstr</span>&nbsp;&nbsp;"
-            ."<a class='menubtn' href='logout.php' style='color:white; font-weight:bold;'>Logout</a>" 
-            ."<a class='menubtn' href='index.php' style='color:white; font-weight:bold;'>Home</a>"
-            . "<a class='menubtn' href='contact.php' style='color:white; font-weight:bold;'>Contact Us</a>"
+            . "<span id='headerapp'>$appname$userstr</span>"
+            . "<li><a class='menubtn btnwhite' href='contact.php'>Contact Us</a></li>"
+            . "<li><a class='menubtn btnwhite' href='logout.php'>Logout</a></li>"
+            ."<li><a class='menubtn btnwhite' href='index.php'>Home</a></li>"
+            . "<li class='nav-menu'>"
+            ."<span></span><span></span><span></span>" 
+            . "</li>"
             . "</ul>";
 }
     echo "<link rel='stylesheet' href='jquery/jquery-ui-themes-1.11.4/themes/smoothness/jquery-ui.css' type='text/css' />".   
@@ -80,7 +86,10 @@ if(!$loggedin){
 echo '</div>';
 $checkmark='<span class="checkmark"><div class="checkmark_circle"></div><div class="checkmark_stem"></div>
     <div class="checkmark_kick"></div></span>';
-
+if($loggedin){
 echo '<div class="container">';
-
+}
+else{
+    echo '<div class="container" style="flex-direction: row;">';
+}
 ?>

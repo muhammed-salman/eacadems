@@ -17,21 +17,22 @@ if($loggedin){
     
  if($_SESSION['grid']==='3'||$_SESSION['grid']==='5'||$_SESSION['grid']==='2'){
 updateTest();
-echo '<div id="left">';
+//echo '<div id="left">';
 echo '<div class="info-box">'
 . '<div class="full-title-redgrad">Important Guidelines</div>';
 echo '<ul>'
         . '<li>'.$checkmark.' Please check the test marks before making entry.</li>'
         . '<li>You are not allowed to make the changes once you have submitted the form.</li>'
            .'<li>'.$checkmark.' Following is the color coding scheme on form.</li>'
-        .'<li>White --> Pass / Clear</li>'
+        .'<li>White --> Passed / Cleared</li>'
         . '<li><font color="orange">Orange --></font> Requires 1 Mark to Pass / Clear Subject</li>'
-        . '<li><br><font color="red">Red --></font> Fail </li>'
+        . '<li><font color="red">Red --></font> Failed </li>'
         . '</ul>';
 
 echo <<<_END
    </div>
-    <div id="right">    
+   <!--</div> 
+    <div id="right">-->    
 _END;
     if($_POST){
         if(isset($_POST['tyear'])&& isset($_POST['tsub'])&& isset($_POST['title'])) {
@@ -54,34 +55,35 @@ _END;
         }
         else {
 echo <<<_END
+        <div class="scrollwrapper">    
         <form method="post" id="form1" >
           <center>
-          <table cellspacing="8" cellpadding="2" border="0" bgcolor="#00eeee">
-            <th colspan="5" align="center">Test Marks Form</th>
+          <table id="tmtable">
+            <th colspan="5">Test Marks Form</th>
 _END;
-            echo '<tr><td colspan="5" align="center"><pre><b>Course:</b>'.$title.'    <b>Course ID:</b>'.$tsub.'    <b>Year:</b>'.$tyear.'</pre></td></tr>';            
+            echo '<tr><td colspan="5"><pre>Course:'.$title.'    Course ID:'.$tsub.'    Year:'.$tyear.'</td></tr>';            
 echo <<<_END
             <tr>
-                <th align="center"><b>Rollno</b></th>
-                <th align="center"><b>Name</b></th>
-                <th align="center"><b>T-1</b></th>
-                <th align="center"><b>T-2</b></th>
-                <th align="center"><b>AGG</b></th>
+                <th>Rollno</th>
+                <th>Name</th>
+                <th>T-1</th>
+                <th>T-2</th>
+                <th>AGG</th>
             </tr>
 _END;
         while($row=  mysql_fetch_array($result))
         {
             echo '<tr>';
-            echo '<td align="center"> <input type="text" class="tmroll" name="'.$row["rollno"].'" style="border: 0; background: transparent; text-align: center;" value="'.$row['rollno'].'" readonly="readonly" /></td>';
-            echo '<td align="center"><textarea class="readonlytextarea" rows="2" name="'.$row["rollno"].'_name" readonly="readonly">'.$row['name'].'</textarea></td>';
-            echo '<td align="center"><input type="number" step="1"  class="tmt1" name="'.$row["rollno"].'_t1" id="'.$row["rollno"].'_t1" value="'.$row['t1'].'" style="text-align: center;"';
+            echo '<td class="tmroll">'.$row['rollno'].'</td>';
+            echo '<td><textarea class="readonlytextarea" rows="2" name="'.$row["rollno"].'_name" readonly="readonly">'.$row['name'].'</textarea></td>';
+            echo '<td><input type="number" step="1"  class="tmt1" name="'.$row["rollno"].'_t1" id="'.$row["rollno"].'_t1" value="'.$row['t1'].'"';
             if($row['t1']!=NULL){
                 echo  ' readonly="readonly"/></td>';
             }
             else {
                 echo  '/></td>';
             }
-            echo '<td align="center"><input type="number" step="1" class="tmt2" name="'.$row[rollno].'_t2" id="'.$row[rollno].'_t2" value="'.$row['t2'].'" style="text-align: center;"';
+            echo '<td><input type="number" step="1" class="tmt2" name="'.$row[rollno].'_t2" id="'.$row[rollno].'_t2" value="'.$row['t2'].'"';
             if($row['t2']!=NULL){
                 echo  ' readonly="readonly"/></td>';
             }
@@ -89,18 +91,18 @@ _END;
                 echo  '/></td>';
             }
             $agg=  intval(round(($row[t1]+$row[t2])/2, 0, PHP_ROUND_HALF_UP));
-            echo '<td align="center"><input type="text" class="tmagg" name="'.$row[rollno].'_agg" id="'.$row[rollno].'_agg" value="'.$agg.'" readonly="readonly"';
+            echo '<td><input type="text" class="tmagg" name="'.$row[rollno].'_agg" id="'.$row[rollno].'_agg" value="'.$agg.'" readonly="readonly"';
            if($agg< 7)
-                echo  ' style="background-color: red; text-align: center;" /></td>';
+                echo  ' style="background-color: red;" /></td>';
            elseif($agg==7) 
-                echo  ' style="background-color: orange; text-align: center;" /></td>';
+                echo  ' style="background-color: orange;" /></td>';
             else 
-                echo  ' style="background-color: white; text-align: center;" /></td>';
+                echo  ' style="background-color: white;" /></td>';
             echo '</tr>';
         }
         echo '<tr>'
-        . '<td align="center" colspan="2"><input type="submit" class="button" style="width:100%; margin:0;" name="updatetm" id="updatetm" value="Update Marks" onclick="return validateTestMarks(this)"></td>'
-                . '<td align="center" colspan="3"><input type="submit" class="button" style="width:100%; margin:0;" name="viewtm" id="viewtm" value="View in Printable Format" onclick="submitForm(\'viewtm.php\')"></td></tr>';
+        . '<td colspan="2"><input type="submit" class="button"  name="updatetm" id="updatetm" value="Update Marks" onclick="return validateTestMarks(this)"></td>'
+                . '<td colspan="3"><input type="submit" class="button"  name="viewtm" id="viewtm" value="View in Printable Format" onclick="submitForm(\'viewtm.php\')"></td></tr>';
         echo '</table>';
         echo '</center>';
         echo '<input type="hidden" name="tmyear" value="'.$tyear.'"/>';
@@ -109,6 +111,7 @@ _END;
         echo '<input type="hidden" name="tsub" value="'.$tsub.'"/>';
         echo '<input type="hidden" name="title" value="'.$title.'"/>';
         echo '</form>';
+  //      echo '</div>';
     }
    }
  }

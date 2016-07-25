@@ -13,7 +13,7 @@
 */
 
 require_once 'functions/header.php';
-markAttendence();
+//markAttendence();
 if($loggedin)
 {
 if($_POST)
@@ -40,7 +40,7 @@ if($_POST)
         while($i<=$insCount){
         
             $query="INSERT INTO `Th_Pr-Record` VALUES('$fsub','$fdol','$fyear','$fthpr','$fslot','$fbatch','$fnol')";
-            queryMysql($query);
+ //           queryMysql($query);
             $i++;
             $fslot++;
         }
@@ -84,7 +84,7 @@ echo <<<_END
     
           <div class="full-title-blackgrad">Attendence Form</div>
           <div class="fit-title-redgrad">
-              <input type="checkbox" name="absentcheck" id="absentcheck"  class="roll-check">Absent All
+              <input type="checkbox" name="absentcheck" id="absentcheck"  class="roll-check"> Absent All
           </div>
          <div id="roll-list">
           
@@ -94,15 +94,15 @@ _END;
             while($row = mysql_fetch_array($result)){
             echo '<div title="'.$row['name'].'">'
                     .' <input type="checkbox" class="absentroll roll-check" name="rollno[]" value="'.$row['rollno'] .'">'
-                    .sprintf("%02d",$sr).'. '.$row['rollno'].'<span>'.sprintf("%.15s",$row['name']).'</span>'.
+                    .'<span>'.sprintf("%02d",$sr).'. '.$row['rollno'].'</span> <span>'.sprintf("%.15s",$row['name']).'</span>'.
                     '</div>';
             $sr++;  
             }
 echo <<<_END
             </div>
-                <div style="text-align:center;">
-                    <input type="submit" class="button" style="width:7vw;" value="Submit">
-                </div>
+            <div style="margin-top:0.5rem;">
+                <input type="submit" class="button" value="Submit">
+            </div>
 _END;
         echo  '<input type="hidden" name="acourse_id" id="acourse_id" value="'.$fsub.'">';
         echo  '<input type="hidden" name="afdol" id="afdol" value="'.$fdol.'">';

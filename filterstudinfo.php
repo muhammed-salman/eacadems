@@ -60,17 +60,16 @@ if($loggedin){
                 </div>
                 <div><label class="form-label">Select the information required</label> </div>
                 <div>
-                    
-                    <input class="form-check" type="checkbox" name="fsirollno"  checked="checked"><label class="form-label">Roll no</label>
-                    <input class="form-check" type="checkbox" name="fsiname"  checked="checked"><label class="form-label">Name</label>
-                    <input class="form-check" type="checkbox" name="fsiaddress"  checked="checked"><label class="form-label">Address</label>
-                    <input class="form-check" type="checkbox" name="fsidoa"  checked="checked"><label class="form-label">DOA</label>
+                    <label class="form-label"><input class="form-check" type="checkbox" name="fsirollno"  checked="checked">Roll no</label>
+                    <label class="form-label"><input class="form-check" type="checkbox" name="fsiname"  checked="checked">Name</label>
+                    <label class="form-label"><input class="form-check" type="checkbox" name="fsiaddress"  checked="checked">Address</label>
+                    <label class="form-label"><input class="form-check" type="checkbox" name="fsidoa"  checked="checked">DOA</label>
                 </div>
                 <div>
-                    <input class="form-check" type="checkbox" name="fsidob"  checked="checked"><label class="form-label">DOB</label>
-                    <input class="form-check" type="checkbox" name="fsiphoneno"  checked="checked"><label class="form-label">Phone no</label>
-                    <input class="form-check" type="checkbox" name="fsiemail"  checked="checked"><label class="form-label">Email</label>
-                    <input class="form-check" type="checkbox" name="fsipphoneno"  checked="checked"><label class="form-label">Parents Phone</label>
+                    <label class="form-label"><input class="form-check" type="checkbox" name="fsidob"  checked="checked">DOB</label>
+                    <label class="form-label"><input class="form-check" type="checkbox" name="fsiphoneno"  checked="checked">Phone no</label>
+                    <label class="form-label"><input class="form-check" type="checkbox" name="fsiemail"  checked="checked">Email</label>
+                    <label class="form-label"><input class="form-check" type="checkbox" name="fsipphoneno"  checked="checked">Parents Phone</label>
                 </div>
 
                 <div>

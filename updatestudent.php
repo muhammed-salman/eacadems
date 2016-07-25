@@ -84,8 +84,9 @@ _END;
            echo '</div>';
 echo <<<_END
            <div>
-                <input  type="checkbox" name="cfaddcheck" tabindex="3" class="form-check addcheck">
-                <label class="form-label">Same as above</label>
+                <label class="form-label">
+                    <input  type="checkbox" name="cfaddcheck" tabindex="3" class="form-check addcheck">
+                Same as above</label>
            </div>
 _END;
            echo '<div>'; 
@@ -94,7 +95,7 @@ _END;
                 .$row[res_add]. '</textarea>';
            echo '</div>';
            echo '<div>'; 
-                echo'<label class="form-label">Semster</label>';
+                echo'<label class="form-label">Semester</label>';
                 echo'<input class="form-input" type="text" tabindex="5" maxlength="4" name="ussem" '
                 . 'value="'.$row[sem].'" readonly="true" required>';
            echo '</div>';

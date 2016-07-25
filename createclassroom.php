@@ -41,7 +41,7 @@ echo <<<_END
                     <input class="form-input" type="text" name="class_id" placeholder="Ex: A-201" maxlength="6" required>
                 </div>
                 <div>
-                    <label class="form-label">Classroom Abbreviation</label>
+                    <label class="form-label">Classroom Abbrv</label>
                     <input class="form-input" type="text" name="class" placeholder="Ex: LH (for Lecture Hall)" maxlength="15" required>
                 </div>  
                 <div>
@@ -56,8 +56,8 @@ _END;
     if(mysql_num_rows($result)==0)
         echo '<span class="info">No Classrooms seem to exist so far!';
     else {
-        echo '<div class="fit-title-blackgrad">Existing Classrooms</div>';
-        echo '<div class="col4 div-table">';
+        echo '<div class="fit-title-blackgrad" style="float:left; margin-bottom:1em;">Existing Classrooms</div>';
+        echo '<div class="col4-1 div-table">';
             while ($row = mysql_fetch_array($result)) {
                 echo '<div>'
                         . '<span>'.$row['class_id'].'</span>'

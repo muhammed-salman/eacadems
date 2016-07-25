@@ -51,9 +51,9 @@ _END;
 echo <<<_END
 " readonly="true"/>
                 <div>
-                   <button class="button" name="createtlo" id="createtlo" onclick="submitForm('tlo.php')">Create TLO</button>
-                   <button class="button" name="updatetlo" id="updatetlo" onclick="submitForm('updatetlo.php')">Update TLO</button>
-                   <button class="button" name="viewtlo" id="viewtlo" onclick="submitForm('viewtlo.php')">View TLO</button>
+                   <button class="button form-button" name="createtlo" id="createtlo" onclick="submitForm('tlo.php')">Create TLO</button>
+                   <button class="button form-button" name="updatetlo" id="updatetlo" onclick="submitForm('updatetlo.php')">Update TLO</button>
+                   <button class="button form-button" name="viewtlo" id="viewtlo" onclick="submitForm('viewtlo.php')">View TLO</button>
                 </div>        
             </fieldset>
                             <input type="hidden" name="title" id="title" value=""/>

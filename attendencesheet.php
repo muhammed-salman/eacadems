@@ -22,7 +22,7 @@ echo <<<_END
         <div id="right">
             <div name="wrapper" id="wrapper" class="scrollwrapper">
             <form method="post">
-        <fieldset class="form">
+        <fieldset class="form" style=width>
             <legend class="fit-title-blackgrad">Attendence Sheet Selection</legend>
              <input type="hidden" name="asyear" id="asyear" class="teachyear form-input" required value="
 _END;
@@ -63,7 +63,7 @@ _END;
     
 echo <<<_END
             <div>
-                <label class="form-label">Select Subject</label>
+                <label class="form-label">Select Subject:</label>
                 <select class="attsub form-input" name="assub" id="assub" required>
 _END;
 if($_SESSION['grid']=='5'){    loadTeachesCourse('none',  academic_year());}
@@ -71,10 +71,10 @@ echo <<<_END
                     </select>
             </div>
             <div>
-                <label class="form-label">Type</label>
+                <label class="form-label">Type:</label>
                 <span class="form-input">
-                    <input type="radio" class="form-radio" name="asthpr" value=1 required><label class="form-label">Theory</label>
-                    <input type="radio" class="form-radio" name="asthpr" value=0 required><label class="form-label">Practical</label>
+                    <label class="form-label"><input type="radio" class="form-radio" name="asthpr" value=1 required>Theory</label>
+                    <label class="form-label"><input type="radio" class="form-radio" name="asthpr" value=0 required>Practical</label>
                 </span>    
             </div>
 

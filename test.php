@@ -16,10 +16,10 @@ require_once 'functions/header.php';
 if($loggedin){
          if($_SESSION['grid']==='3'||$_SESSION['grid']==='5'||$_SESSION['grid']==='2'){
 echo <<<_END
-    <div id="left">
+    <!--div id="left">
 _END;
 echo <<<_END
-   </div>
+   </div-->
     <div id="right">    
         
         <form method="post" action="tm.php">

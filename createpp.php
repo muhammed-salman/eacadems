@@ -53,7 +53,7 @@ echo <<<_END
                 </select>
             </div>
             <div>
-                <label class="form-label">Enter No. of Experiments</label>
+                <label class="form-label">Enter No. of Exp.</label>
                 <input class="form-input" name="ppexp" type="number" min=1 max=20 required/>
             </div>
             <div>

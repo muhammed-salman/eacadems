@@ -24,7 +24,7 @@ echo <<<_END
 _END;
 echo <<<_END
    </div>
-   \ <div id="right">    
+   <div id="right">    
     
 <form method="post" action="assigncourse.php"onsubmit="return validateAssignCourse(this)">
             <fieldset class="form">
@@ -84,8 +84,8 @@ echo <<<_END
                 <div>
                     <label class="form-label">Type</label>
                     <span class="form-input">    
-                        <input type="radio" name="abit" id="ath" class="aThorPr form-radio"  value=1 required><label class="form-label">Theory</label>
-                        <input type="radio" id="apr"  name="abit" class="aThorPr form-radio" value=0 required><label class="form-label">Practical</label>
+                        <label class="form-label"><input type="radio" name="abit" id="ath" class="aThorPr form-radio"  value=1 required>Theory</label>
+                        <label class="form-label"><input type="radio" id="apr"  name="abit" class="aThorPr form-radio" value=0 required>Practical</label>
                     </span>    
                 </div>
                 <div>
@@ -95,10 +95,10 @@ echo <<<_END
                 <div>
                     <label class="form-label">Batches </label>    
                     <span class="form-input">    
-                        <input type="checkbox" class="acheck form-check" disabled="disabled" id="ab1" name="ab1" value="1"/><label class="form-label">B1</label>
-                        <input type="checkbox" class="acheck form-check" disabled="disabled" id="ab2" name="ab2" value="1"/><label class="form-label">B2</label>
-                        <input type="checkbox" class="acheck form-check" disabled="disabled" id="ab3" name="ab3" value="1"/><label class="form-label">B3</label>
-                        <input type="checkbox" class="acheck form-check" disabled="disabled" id="ab4" name="ab4" value="1"/><label class="form-label">B4</label>
+                        <label class="form-label"><input type="checkbox" class="acheck form-check" disabled="disabled" id="ab1" name="ab1" value="1"/>B1</label>
+                        <label class="form-label"><input type="checkbox" class="acheck form-check" disabled="disabled" id="ab2" name="ab2" value="1"/>B2</label>
+                        <label class="form-label"><input type="checkbox" class="acheck form-check" disabled="disabled" id="ab3" name="ab3" value="1"/>B3</label>
+                        <label class="form-label"><input type="checkbox" class="acheck form-check" disabled="disabled" id="ab4" name="ab4" value="1"/>B4</label>
                     </span>    
                 </div>
                 <div>

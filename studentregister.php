@@ -46,8 +46,8 @@ if($loggedin){
            <div> 
                 <label class="form-label">Gender</label>
                     <span class="form-input">
-                        <input class="form-radio"  type="radio" tabindex="3" name="sgender" id="smale" value="MALE"  required> <label class="form-label">Male</label>
-                        <input class="form-radio"  type="radio" tabindex="4" name="sgender" id="sfemale" value="FEMALE" required> <label class="form-label">Female</label>
+                        <label class="form-label"><input class="form-radio"  type="radio" tabindex="3" name="sgender" id="smale" value="MALE"  required> Male</label>
+                        <label class="form-label"><input class="form-radio"  type="radio" tabindex="4" name="sgender" id="sfemale" value="FEMALE" required> Female</label>
                     </span>
            </div>
            <div>
@@ -55,8 +55,10 @@ if($loggedin){
                     <textarea  tabindex="3" rows="3" cols="23" class="form-input peradd" maxlength="150"  name="saddress" placeholder="Your Permanent Address" wrap="soft" required></textarea>  
            </div>
             <div>
-                <input type="checkbox" name="cfaddcheck" class="form-check addcheck">
-                <label class="form-label">Same as above</label>
+                <label class="form-label">
+                    <input type="checkbox" name="cfaddcheck" class="form-check addcheck">
+                    Same as above
+                </label>
            </div>
            <div>
                 <label class="form-label">Residential Address</label>

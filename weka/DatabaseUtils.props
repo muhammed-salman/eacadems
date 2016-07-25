@@ -12,7 +12,7 @@
 jdbcDriver=org.gjt.mm.mysql.Driver
 
 # database URL
-jdbcURL=jdbc:mysql://localhost:3306/College
+jdbcURL=jdbc:mysql://localhost:3306/College2
 
 # specific data types
 # string, getString() = 0;    --> nominal
@@ -277,4 +277,3 @@ KeywordsMaskChar=_
 #flags for loading and saving instances using DatabaseLoader/Saver
 nominalToStringLimit=50
 idColumn=auto_generated_id
-

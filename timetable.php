@@ -25,7 +25,7 @@ $ltyear=$_POST['ltyear'];
 echo '<form method="post" id="form1" action="ajax_pdf.php">';
         echo '<div id="pdfdiv">';
 ob_start();
- echo '<center>';
+ echo '<div class="scrollwrapper">';
  
  echo '<table id="pdfTable" width="100%" cellspacing="0" cellpadding="4" border="1" bgcolor="WHITE" style="overflow:wrap; border: 1px solid black;border-collapse:collapse;">';
         echo '<tr rowspan="3"><td colspan="1" align="center"><img src="images/college_logo.jpg" ></td>'.
@@ -250,7 +250,7 @@ echo '<input type="hidden" id="page" name="page" value=""/>';
 echo '<input type="hidden" id="orientation" name="orientation" value="L"/>';
 echo '<input type="button" class="button" name="generatepdf" id="generatepdf" value="Generate PDF"></td>';
 echo '<br><br>';
-echo '</center>';
+echo '</div>';
 echo '</div>';
 echo '</form>';
 }

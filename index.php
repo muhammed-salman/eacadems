@@ -59,20 +59,20 @@ if($loggedin){
             
             echo '<div id="left">';
              echo '<div class="info-box">'
-                . '<span class="full-title-blackgrad">Registered Students</span>'
-                     . '<ul id="stCount">'
-                     . '<li>Sem I : '.$s1.'</li>'
-                     . '<li>Sem II : '.$s2.'</li>'
-                     . '<li>Sem III : '.$s3.'</li>'
-                     . '<li>Sem IV : '.$s4.'</li>'
-                     . '<li>Sem V : '.$s5.'</li>'
-                     . '<li>Sem VI : '.$s6.'</li>'
-                     . '<li>Sem VII : '.$s7.'</li>'
+                . '<span class="full-title-blackgrad slidebutton">Registered Students<span class="arrow-up"></span></span>'
+                     . '<ul id="stCount" class="slidebox">'
+                     . '<li>Sem &nbsp;&nbsp;I : '.$s1.'</li>'
+                     . '<li>Sem &nbsp;&nbsp;&nbsp;II : '.$s2.'</li>'
+                     . '<li>Sem &nbsp;III : '.$s3.'</li>'
+                     . '<li>Sem &nbsp;&nbsp;IV : '.$s4.'</li>'
+                     . '<li>Sem &nbsp;&nbsp;&nbsp;V : '.$s5.'</li>'
+                     . '<li>Sem &nbsp;&nbsp;VI : '.$s6.'</li>'
+                     . '<li>Sem &nbsp;VII : '.$s7.'</li>'
                      . '<li>Sem VIII : '.$s8.'</li>'
                      . '</ul>'
                 . '</div>'
-            . '<div class="info-box"><div class="full-title-redgrad">Important Guidelines</div>'
-                     . '<ul>'
+            . '<div class="info-box"><div class="full-title-redgrad slidebutton">Important Guidelines<span class="arrow-up"></span></div>'
+                     . '<ul class="slidebox">'
             .'<li>'.$checkmark.' Please Verify the data before submitting the form</li>'
             .'<li>'.$checkmark.' In most of the cases modification is not possible. So be cautious.</li>'        
             .'<li>'.$checkmark.' All the Faculty are advised to fill Attendence daily without fail</li>'
@@ -84,95 +84,95 @@ if($loggedin){
            echo '<div class="link_container">';
                
              if($_SESSION['grid']==='3'||$_SESSION['grid']==='7'||$_SESSION['grid']==='8'){ 
-                echo '<a href="studentregister.php" ><img src="icons/student.png" >Register Student</a>';
+                echo '<a href="studentregister.php" ><img src="icons/student.png" ><br>Register Student</a>';
              }
              if($_SESSION['grid']==='3'||$_SESSION['grid']==='7'||$_SESSION['grid']==='8'){ 
-                echo '<a href="updatestudent.php" ><img src="icons/updatestudent.png" >Update Student</a>';
+                echo '<a href="updatestudent.php" ><img src="icons/updatestudent.png" ><br>Update Student</a>';
              }
              if($_SESSION['grid']==='3'||$_SESSION['grid']==='2'||$_SESSION['grid']==='9'){                 
-                 echo '<a href="createfacultystaff.php"><img src="icons/professor.png" >Register Staff</a>';
+                 echo '<a href="createfacultystaff.php"><img src="icons/professor.png" ><br>Register Staff</a>';
              }
              if($_SESSION['grid']==='3'||$_SESSION['grid']==='1'||$_SESSION['grid']==='9'){
-                echo '<a href="deptcreate.php"><img src="icons/department.png" >Create Department</a>';
+                echo '<a href="deptcreate.php"><img src="icons/department.png" ><br>Create Department</a>';
              }
              if($_SESSION['grid']==='3'||$_SESSION['grid']==='1'||$_SESSION['grid']==='7'){
-                echo '<a href="createclassroom.php"><img src="icons/class.png" >Create Classroom</a>';
+                echo '<a href="createclassroom.php"><img src="icons/class.png" ><br>Create Classroom</a>';
              }
              if($_SESSION['grid']==='3'||$_SESSION['grid']==='9'){
-                echo '<a href="createuser.php"><img src="icons/user.png" >Create User Account</a>';
+                echo '<a href="createuser.php"><img src="icons/user.png" ><br>User Account</a>';
              }
              if($_SESSION['grid']==='3'||$_SESSION['grid']==='7'){
-                echo '<a href="createcourse.php"><img src="icons/course.png" >Make Course Entry</a>';
+                echo '<a href="createcourse.php"><img src="icons/course.png" ><br>Make Course</a>';
              }
              if($_SESSION['grid']==='3'||$_SESSION['grid']==='7'){
-                echo '<a href="createtimetable.php"><img src="icons/timetable.png" >Create Time Table</a>';
+                echo '<a href="createtimetable.php"><img src="icons/timetable.png" ><br>Create Schedule</a>';
              }
              if($_SESSION['grid']==='3'||$_SESSION['grid']==='7'||$_SESSION['grid']==='5'||
                      $_SESSION['grid']==='4'||$_SESSION['grid']==='2'||$_SESSION['grid']==='1'){
-                echo '<a href="loadtimetable.php"><img src="icons/viewtime.png" >Classwise Time Table</a>';
+                echo '<a href="loadtimetable.php"><img src="icons/viewtime.png" ><br>Classwise Schedule</a>';
              }
              if($_SESSION['grid']==='3'||$_SESSION['grid']==='7'||$_SESSION['grid']==='2'){
-                echo '<a href="assigncourse.php"><img src="icons/load.png" >Load Assignment</a>';
+                echo '<a href="assigncourse.php"><img src="icons/load.png" ><br>Load Assignment</a>';
              }
              if($_SESSION['grid']==='3'||$_SESSION['grid']==='7'||$_SESSION['grid']==='2'||$_SESSION['grid']==='6'){
-                echo '<a href="filterpromote.php"><img src="icons/promote.png" >Promote / Detain Student</a>';
+                echo '<a href="filterpromote.php"><img src="icons/promote.png" ><br>Promote / Detain</a>';
              }
              if($_SESSION['grid']==='3'||$_SESSION['grid']==='5'||$_SESSION['grid']==='2'){
-                echo '<a href="test.php"><img src="icons/testmarks.png" >Manage Test Marks</a>';
+                echo '<a href="test.php"><img src="icons/testmarks.png" ><br>Test Marks</a>';
              }
              if($_SESSION['grid']==='3'||$_SESSION['grid']==='6'){
-                echo '<a href="grade.php"><img src="icons/grade.png" >Semester Marks Entry</a>';
+                echo '<a href="grade.php"><img src="icons/grade.png" ><br>Semester Marks</a>';
              }
              if($_SESSION['grid']==='3'||$_SESSION['grid']==='5'||$_SESSION['grid']==='2'){
-                echo '<a href="filteratt.php"><img src="icons/attendence.png" >Mark Attendence</a>';
+                echo '<a href="filteratt.php"><img src="icons/attendence.png" ><br>Mark Attendence</a>';
              }
              if($_SESSION['grid']==='3'||$_SESSION['grid']==='5'||$_SESSION['grid']==='2'){
-                echo '<a href="createpp.php"><img src="icons/planning.png" >Create Practical Plan</a>';
+                echo '<a href="createpp.php"><img src="icons/planning.png" ><br>Create Practical</a>';
              }
              if($_SESSION['grid']==='3'||$_SESSION['grid']==='5'||$_SESSION['grid']==='2'){
-                echo '<a href="filterpp.php"><img src="icons/updateplan.png" >Manage Practical Plan</a>';
+                echo '<a href="filterpp.php"><img src="icons/updateplan.png" ><br>Manage Practical</a>';
              }
              if($_SESSION['grid']==='3'||$_SESSION['grid']==='5'||$_SESSION['grid']==='2'){
-                echo '<a href="tlo.php"><img src="icons/tlo.png" >Manage TLO Plan</a>';
+                echo '<a href="tlo.php"><img src="icons/tlo.png" ><br>Manage TLO</a>';
              }
              if($_SESSION['grid']==='3'||$_SESSION['grid']==='5'||$_SESSION['grid']==='2'){
-                echo '<a href="CA.php"><img src="icons/ca.png" >Continuous Assesment</a>';
+                echo '<a href="CA.php"><img src="icons/ca.png" ><br>Continuous Assesment</a>';
              }
              if($_SESSION['grid']==='3'||$_SESSION['grid']==='7'){
-                echo '<a href="createsy.php"><img src="icons/syllabus.png" >Create Syllabus</a>';
+                echo '<a href="createsy.php"><img src="icons/syllabus.png" ><br>Create Syllabus</a>';
              }
              if($_SESSION['grid']==='3'||$_SESSION['grid']==='5'||$_SESSION['grid']==='7'||$_SESSION['grid']==='2'){
-                echo '<a href="filtersyllabus.php"><img src="icons/viewsyllabus.png" >Manage Syllabus</a>';
+                echo '<a href="filtersyllabus.php"><img src="icons/viewsyllabus.png" ><br>Manage Syllabus</a>';
              }
              if($_SESSION['grid']==='3'||$_SESSION['grid']==='5'||$_SESSION['grid']==='2'||
                      $_SESSION['grid']==='7'||$_SESSION['grid']==='1'||$_SESSION['grid']==='9'){
-                echo '<a href="filterstudinfo.php"><img src="icons/info.png" >View Students Info</a>';
+                echo '<a href="filterstudinfo.php"><img src="icons/info.png" ><br>Students Info</a>';
              }
              if($_SESSION['grid']==='3'||$_SESSION['grid']==='5'||$_SESSION['grid']==='2'||
                      $_SESSION['grid']==='7'||$_SESSION['grid']==='1'){
-                echo '<a href="filterdefaulter.php"><img src="icons/defaulter.png" >Defaulter List</a>';
+                echo '<a href="filterdefaulter.php"><img src="icons/defaulter.png" ><br>Defaulter List</a>';
              }
              if($_SESSION['grid']==='3'||$_SESSION['grid']==='2'){
-                echo '<a href="view.php"><img src="icons/viewcaplan.png" >View CA / Prac Plan / TLO</a>';
+                echo '<a href="view.php"><img src="icons/viewcaplan.png" ><br>View CA & Plans</a>';
              }
             if($_SESSION['grid']==='3'||$_SESSION['grid']==='7'||$_SESSION['grid']==='2'){
-                echo '<a href="viewtest.php"><img src="icons/viewtest.png" >Test Marks Sem-wise</a>';
+                echo '<a href="viewtest.php"><img src="icons/viewtest.png" ><br>Class TM</a>';
              }
             if($_SESSION['grid']==='3'||$_SESSION['grid']==='5'||$_SESSION['grid']==='2'){
-                echo '<a href="studentrecord.php"><img src="icons/record.png" >Students Records</a>';
+                echo '<a href="studentrecord.php"><img src="icons/record.png" ><br>Students Records</a>';
              }
 
              if($_SESSION['grid']==='3'||$_SESSION['grid']==='5'||$_SESSION['grid']==='2' ||$_SESSION['grid']==='7'){
-                echo '<a href="attendencesheet.php"><img src="icons/sheet.png" >Attendence Sheet</a>';
+                echo '<a href="attendencesheet.php"><img src="icons/sheet.png" ><br>Attendence Sheet</a>';
              }
              if($_SESSION['grid']==='3'||$_SESSION['grid']==='5'||$_SESSION['grid']==='2'){
-                echo '<a href="facultyprofile.php"><img src="icons/profile.png" >Manage Your Profile</a>';
+                echo '<a href="facultyprofile.php"><img src="icons/profile.png" ><br>Your Profile</a>';
              }
              if($_SESSION['grid']==='3'||$_SESSION['grid']==='2'||$_SESSION['grid']==='1'||$_SESSION['grid']==='9'){
-                echo '<a href="facultyrecord.php"><img src="icons/viewprofile.png" >Faculty Profile</a>';
+                echo '<a href="facultyrecord.php"><img src="icons/viewprofile.png" ><br>Faculty Profile</a>';
              }
              if($_SESSION['grid']!=='8'){
-                echo '<a href="changepass.php"><img src="icons/password.png" >Change Password</a>';
+                echo '<a href="changepass.php"><img src="icons/password.png" ><br>Change Password</a>';
              }
              
              echo '</div></div>';

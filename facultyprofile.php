@@ -51,15 +51,15 @@ echo <<<_END
                     <input class="form-input" type="text" value="$row[name]"name="fpname" readonly="true" required >
             </div>
             <div>
-                <label class="form-label">UG Qualificationwith Grade</label>
+                <label class="form-label">UG Qualification with Grade</label>
                 <input class="form-input" type="text"  value="$row[ug]" name="fpug" placeholder="Ex: B.E. with First Class" required >
             </div>
             <div>
-                <label class="form-label">PG Qualificationwith Grade</label>
+                <label class="form-label">PG Qualification with Grade</label>
                 <input class="form-input" type="text" value="$row[pg]" name="fppg" placeholder="Ex: M.E. with First Class" required >
             </div>
             <div>
-                <label class="form-label">Ph.D Qualificationwith Topic</label>
+                <label class="form-label">Ph.D Qualification with Topic</label>
                 <input class="form-input" type="text" value="$row[phd]" name="fpphd" placeholder="Ex: Ph.D in Computer Automated System" required >
             </div>
             <div>
@@ -139,8 +139,10 @@ _END;
 }
 echo <<<_END
             <div>
-                <input class="form-check" type="checkbox" id="photocheck" name="photocheck" value="1"/>
-                <label class="form-label">Check to Update Photo</label> 
+                <label class="form-label">
+                    <input class="form-check" type="checkbox" id="photocheck" name="photocheck" value="1"/>
+                    Check to Update Photo
+                </label> 
                 
             </div>
             <div>

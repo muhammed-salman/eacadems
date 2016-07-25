@@ -61,16 +61,18 @@ echo <<<_END
                 </div>
         
                 <div>
-                    <input class="form-check" type="checkbox" id="twcreatecheck" name="twcreatecheck"/>    
-                    <label class="form-label">Check only if you want to create Continous Assesment Sheets</label>
+                    <label class="form-label">    
+                        <input class="form-check" type="checkbox" id="twcreatecheck" name="twcreatecheck"/>    
+                        Check only if you want to create Continous Assesment Sheets
+                    </label>
                 </div>
                 <div class="hide">
 _END;
                  $result=  queryMysql("select * from TwComponents");
                  while ($row = mysql_fetch_array($result)) {
                      echo '<div>';
-                     echo '<span class="form-label"><input type="checkbox" class="twcheck form-check" name="'.$row['compo_id'].'" value="'.$row['compo_id'].'" disabled="true">'
-                             . ' <label class="form-label">'.$row['components'].'</label></span>';
+                     echo '<label class="form-label"><input type="checkbox" class="twcheck form-check" name="'.$row['compo_id'].'" value="'.$row['compo_id'].'" disabled="true">'
+                             .$row['components'].'</label>';
                      echo '<span class="form-input">'
                      . '<input type="number" disabled="true" class="twweight form-input" min="5" max="40"  placeholder="Weightage" name="weight_'.$row["compo_id"].'" />';
                      echo '<input type="number" disabled="true" class="twcount form-input" min="1" max="25" placeholder="Total Count" name="compo_nos_'.$row["compo_id"].'"/>';
