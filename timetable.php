@@ -248,7 +248,7 @@ echo '<input type="hidden" id="filename" name="filename" value="Time Table-'.$lt
 echo '<input type="hidden" id="style" name="style" value="2"/>' ;
 echo '<input type="hidden" id="page" name="page" value=""/>';
 echo '<input type="hidden" id="orientation" name="orientation" value="L"/>';
-echo '<input type="button" class="button" name="generatepdf" id="generatepdf" value="Generate PDF"></td>';
+echo '<span><input type="button" class="button" name="generatepdf" id="generatepdf" value="Generate PDF"></span>';
 echo '<br><br>';
 echo '</div>';
 echo '</div>';

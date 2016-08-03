@@ -64,8 +64,9 @@ echo <<<_END
                     <textarea placeholder="Your Full Permanent Address" class="peradd form-input" rows=2 cols=23 required name="cfspaddress" wrap="soft"></textarea>  
             </div>
             <div>
-                <input type="checkbox" name="cfaddcheck" class="addcheck form-check">
-                <label class="form-label">Same as above</label>
+                <label class="form-label">
+                    <input type="checkbox" name="cfaddcheck" class="addcheck form-check">
+                    Same as above</label>
             </div>
             <div>
                 <label class="form-label">Residential Address</label>
@@ -136,7 +137,7 @@ echo <<<_END
                 <textarea class="form-input" name="cfareas" placeholder="values seprated by semicolon(;)" required="true"></textarea>
             </div>
             <div>
-                <label class="form-label">Upload Your Photo[<font size="2">Max Size 3 MB</font>]</label>    
+                <label class="form-label">Upload Photo[<font size="2">Max Size 3 MB</font>]</label>    
                 
                     <input class="form-input" type="file" name="image" required="true"/>
             <div>

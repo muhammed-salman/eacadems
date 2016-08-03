@@ -38,9 +38,7 @@ _END;
 echo <<<_END
                 </select>    
             </div>
-            <div>
-                <input type="submit" class="button form-button" value="Load">
-            </div>
+            <input type="submit" class="button form-button" value="Load">
            </fieldset>
 _END;
 

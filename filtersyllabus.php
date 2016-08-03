@@ -34,10 +34,9 @@ _END;
 echo <<<_END
                         </select>
                 </div>
-                <div>
                    <button class="button form-button" name="updatesy" id="updatesy" onclick="submitForm('updatesy.php')">Update Syllabus</button>
                    <button class="button form-button" name="viewsy" id="viewsy" onclick="submitForm('viewsy.php')">View Syllabus</button>
-                </div>
+                
                    <input type="hidden" name="fstitle" id="fstitle" value=""/>
             </fieldset>
         </form>

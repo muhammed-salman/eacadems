@@ -71,10 +71,7 @@ if($loggedin){
                     <label class="form-label"><input class="form-check" type="checkbox" name="fsiemail"  checked="checked">Email</label>
                     <label class="form-label"><input class="form-check" type="checkbox" name="fsipphoneno"  checked="checked">Parents Phone</label>
                 </div>
-
-                <div>
                     <input type="submit" class="button form-button" value="Get Info">
-                </div>
             </fieldset>
           
         </form>

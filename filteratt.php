@@ -18,11 +18,11 @@ if($loggedin)
     if($_SESSION['grid']==='3'||$_SESSION['grid']==='5'||$_SESSION['grid']==='2'){
     
 echo '<div id="left">';
-echo '<div class="info-box"><div class="full-title-redgrad">Important Guidelines</div>';
-echo '<ul>'
-        .'<li>'.$checkmark.' It is MANADATORYto mark daily attendence record.</li>'
+echo '<div class="info-box"><div class="full-title-redgrad slidebutton">Important Guidelines<span class="arrow-up"></span></div>';
+echo '<ul class="slidebox">'
+        .'<li>'.$checkmark.' It is manadatory to mark daily attendence record.</li>'
         .'<li>'.$checkmark.' If you don\'t fill this form daily, your lecture record will be lost.</li>'   
-        .'<li>'.$checkmark.' After this page it is MANADATORY to MARK ATTENDENCE of students.</li>'
+        .'<li>'.$checkmark.' After this page it is manadatory to mark attendance of students.</li>'
         .'<li>'.$checkmark.' If you abort process all the student will be marked present</li>'
     . '</ul>'
     . '</div>';
@@ -56,6 +56,7 @@ echo <<<_END
                 <label class="form-label">Select Batch</label>
                 <select class="form-input" name="fbatch" id="fbatch" required>
                 </select>
+            </div>
             <div>
                 <label class="form-label">Date of Lecture</label>
                 <input class="form-input" type="text"  name="fdol" required value="
@@ -72,9 +73,7 @@ _END;
 echo <<<_END
                 </select>
             </div>
-            <div>
-                <input type="submit" class="button form-button" value="Proceed">
-            </div>
+            <input type="submit" class="button form-button" value="Proceed">
                     
            </fieldset>
 _END;

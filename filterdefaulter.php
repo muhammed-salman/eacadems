@@ -78,9 +78,7 @@ echo <<<_END
                 <input class="form-input" type="number" min=50 max=75 name="dcutoff" id="dcutoff" tabindex="4" value=75 required/>
                 </label>
             </div>
-            <div>
-                <input type="submit" class="button form-button" value="Load">
-            </div>
+            <input type="submit" class="button form-button" value="Load">
                     
            </fieldset>
            </div>

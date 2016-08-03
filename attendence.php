@@ -13,7 +13,7 @@
 */
 
 require_once 'functions/header.php';
-//markAttendence();
+markAttendence();
 if($loggedin)
 {
 if($_POST)
@@ -40,7 +40,7 @@ if($_POST)
         while($i<=$insCount){
         
             $query="INSERT INTO `Th_Pr-Record` VALUES('$fsub','$fdol','$fyear','$fthpr','$fslot','$fbatch','$fnol')";
- //           queryMysql($query);
+            queryMysql($query);
             $i++;
             $fslot++;
         }

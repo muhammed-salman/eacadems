@@ -53,9 +53,8 @@
                 
                 <input type="hidden" name="ltyear" class="form-input" id="ltyear" value="<?php echo academic_year()?>"required readonly="true"/>
                 
-                <div>
-                    <input type="submit" class="button form-button" value="Load Time Table">
-                </div>
+                <input type="submit" class="button form-button" value="Load Time Table">
+                
             </fieldset>
           
         </form>

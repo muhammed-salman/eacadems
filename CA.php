@@ -20,8 +20,8 @@ if($loggedin){
         
     insertCASheets();
 echo '<div id="left">';    
-echo '<div class="info-box"><div class="full-title-redgrad">Important Guidelines</div>'
-    . '<ul>'
+echo '<div class="info-box"><div class="full-title-redgrad slidebutton">Important Guidelines<span class="arrow-up"></span></div>'
+    . '<ul class="slidebox">'
         .'<li>'.$checkmark.' Only the components which are checked are included in termwork.</li>'
         .'<li>'.$checkmark.' Weightage Should be as per the university strictly.</li>'
         .'<li>'.$checkmark.' Total Count means the total number of experiments/assignment/twcomponent you are going to take.</li>'
@@ -55,18 +55,18 @@ _END;
                         echo academic_year();
 echo <<<_END
 " readonly="true" />
-                <div>
-                   <button class="form-button button" name="viewca" id="viewca" onclick="submitForm('viewca.php')">View CA</button>
-                   <button class="form-button button" name="updateca" id="updateca" onclick="submitForm('updateca.php')">Update CA</button>
-                </div>
+                <span>        
+                <button class="form-button button" name="viewca" id="viewca" onclick="submitForm('viewca.php')">View CA</button>
+                <button class="form-button button" name="updateca" id="updateca" onclick="submitForm('updateca.php')">Update CA</button>
+                </span>        
         
                 <div>
-                    <label class="form-label">    
+                    <label>    
                         <input class="form-check" type="checkbox" id="twcreatecheck" name="twcreatecheck"/>    
                         Check only if you want to create Continous Assesment Sheets
                     </label>
                 </div>
-                <div class="hide">
+                <span class="hide">
 _END;
                  $result=  queryMysql("select * from TwComponents");
                  while ($row = mysql_fetch_array($result)) {
@@ -80,10 +80,9 @@ _END;
                      . '</div>';
                  }
 echo <<<_END
-                </div>
-                <div>
-                    <button class="button form-button" name="createca" id="createca" onclick="submitForm('CA.php')">Create CA Sheets</button>
-                </div>        
+                </span>
+                <button class="button form-button" name="createca" id="createca" onclick="submitForm('CA.php')">Create CA Sheets</button>
+                    
             </fieldset>
                 <input type="hidden" name="title" id="title" value=""/>
 _END;
@@ -101,6 +100,9 @@ else {
 
 }
 
- else echo'<span class="error">Please sign up and/or login to use the system';
+ else{
+     echo'<span class="error">Please sign up and/or login to use the system';
+     header('Refresh:0 ,url=login.php');
+ }
     require_once 'functions/footer.php';
 ?>

@@ -35,40 +35,43 @@ if(!$result || mysql_num_rows($result)==0){
 }
 else {
       
-        echo '<table cellspacing="10" cellpadding="4" border="0" bgcolor="#00eeee">';
+        echo '<table id="stud-search-table" cellspacing="10" cellpadding="4" border="0" bgcolor="#00eeee">';
            echo '<tr>';
-                    echo '<th align="center" width="10%">Roll No.</th>';
+                    echo '<th align="center" width="8%">Roll No.</th>';
                     echo '<th align="center" width="25%">Name</th>';
-                    echo '<th align="center" width="10%">Department</th>';
+                    echo '<th align="center" width="7%">Department</th>';
                     echo '<th align="center" width="5%">Sem</th>';
                     echo '<th align="center" width="15%">Year</th>';
                     echo '<th align="center" width="5%">Select</th>';
+                    echo '<th align="center" width="5%" class="recbtn-col">View</th>';
                     
                 echo '</tr>';
        while($row=mysql_fetch_array($result)){
            
                 echo '<tr>';
                     echo '<td>';
-                        echo '<input type="text" name="rollno" id="srroll" class="'.$row[rollno].'" disabled=true style="color:black;text-align:center;background:transparent;border:0;" required="true" value="'.$row[rollno].'"/>'; 
+                        echo '<input type="text" name="rollno" id="srroll" class="'.$row[rollno].'" disabled=true style="width:80%;color:black;text-align:center;background:transparent;border:0;" required="true" value="'.$row[rollno].'"/>'; 
                     echo '</td>';
                     echo '<td>';
                         echo '<input type="text" name="name" id="srname" class="'.$row[rollno].'" disabled=true style="color:black;background:transparent;border:0;" required="true" value="'.$row[name].'"/>';
                     echo '</td>';
-                    echo '<td><input type="text" name="dept" id="srdept" class="'.$row[rollno].'" disabled=true style="color:black;text-align:center;background:transparent;border:0;" required value="'.$row[dept].'" readonly="true">
+                    echo '<td><input type="text" name="dept" id="srdept" class="'.$row[rollno].'" disabled=true style="width:50%; color:black;text-align:center;background:transparent;border:0;" required value="'.$row[dept].'" readonly="true">
                     </td>';
-                    echo '<td><input type="text" name="sem" id="srsem"  class="'.$row[rollno].'" disabled=true style="color:black;text-align:center;background:transparent;border:0;" required value="'.$row[sem].'"/>
+                    echo '<td><input type="text" name="sem" id="srsem"  class="'.$row[rollno].'" disabled=true style="width:50%; color:black;text-align:center;background:transparent;border:0;" required value="'.$row[sem].'"/>
                     </td>';
                     echo '<td>
                         <input type="text" name="year" id="sryear" class="'.$row[rollno].'" disabled=true style="color:black;text-align:center;background:transparent;border:0;" required value="'.$row[year].'"/> 
                     </td>';
                     echo '<td align="center"><input type="radio" class="sradio" name="sselect" style="width:50%; vertical-align: middle; margin: 0px;" value="'.$row[rollno].'" required></td>';
+                    echo '<td align="center" class="recbtn-col">'
+                    . '<input type="button" class="button recordbtn '.$row[rollno].'" name="recordbtn"  disabled=true value="Get Record"/></td>';
                     
                 echo '</tr>';  
         }
         echo '</table>';
-        echo '<div class="left-slide-box  left-fixed-float">'
+        /*echo '<div class="left-slide-box  left-fixed-float">'
         . '<input type="button" class="button form-button" disabled="true" title="Please Select one of the option then click" id="recordbtn" name="recordbtn"  value="Get Record"/>'
-                . '</div>';
+                . '</div>';*/
    
 }
 

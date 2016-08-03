@@ -4,12 +4,9 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/var/www/html/eacadems/style/coresheet.css</file>
-            <file>file:/var/www/html/eacadems/studrecord.php</file>
             <file>file:/var/www/html/eacadems/index.php</file>
-            <file>file:/var/www/html/eacadems/functions/header.php</file>
+            <file>file:/var/www/html/eacadems/tlo.php</file>
             <file>file:/var/www/html/eacadems/filterstudinfo.php</file>
-            <file>file:/var/www/html/eacadems/studentrecord.php</file>
-            <file>file:/var/www/html/eacadems/functions/functions.php</file>
             <file>file:/var/www/html/eacadems/scripts/assigndependent.js</file>
         </group>
     </open-files>

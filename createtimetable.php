@@ -19,8 +19,8 @@ if($loggedin)
 echo <<<_END
     <div id="left">
 _END;
-echo '<div class="info-box"><div class="full-title-redgrad">Important Guidelines</div>';
-echo '<ul>'
+echo '<div class="info-box"><div class="full-title-redgrad slidebutton">Important Guidelines<span class="arrow-up"></span></div>';
+echo '<ul class="slidebox">'
         . '<li>'.$checkmark.' If you select Practical option then the next sequential time slot is automatically assigned.'
         . ' Hence no need of seprate assignment for two slots in case of practicals</li>'
     . '</ul>'

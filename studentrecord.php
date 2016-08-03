@@ -23,10 +23,9 @@ if($loggedin){
         <form method="post" id="form1">
           
               <img class="search-img" src="images/search_logo.png"/>
-              <input type="text" name="stext" id="stext" placeholder="Search......" style="width:50%;vertical-align:middle;"/>
-              <button class="button" id="ssearchbtn" name="ssearchbtn" style="width:5%;height:1.75em;
-                      padding: 0;vertical-align:middle;">
-              <span class="searchico"></span>
+              <input type="text" name="stext" id="stext" placeholder="Search......"/>
+              <button class="button" id="ssearchbtn" name="ssearchbtn">
+                    <span class="searchico"></span>
               </button>
               <div id="search-container"></div>
           
@@ -40,5 +39,9 @@ if($loggedin){
 
 }
 
- else echo'<span class="error">Please sign up and/or login to use the system</span>';
+ else {
+     echo'<span class="error">Please sign up and/or login to use the system</span>';
+     header('Refresh:0 ,url=login.php');
+     
+ }
 require_once 'functions/footer.php';?>

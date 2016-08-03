@@ -48,7 +48,7 @@ echo <<<_END
                 <label class="form-label">Select Faculty/Staff</label>
                 <select name="cufsname" class="facstaff form-input" required>
                     <option value="">-----</option>
-                    </select><span id="cufserr"></span>
+                    </select><span id="cufserr" class="inline-error"></span>
             </div>
             <div>
                 <label class="form-label">Enter Username</label>

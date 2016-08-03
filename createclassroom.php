@@ -21,8 +21,8 @@ if($loggedin){
 if($_SESSION['grid']==='3'||$_SESSION['grid']==='1'||$_SESSION['grid']==='7'){    
 echo '<div id="left">';
 echo '<div class="info-box">'
-        . '<div class="full-title-redgrad">Important Guidelines</div>'
-            . '<ul>'
+        . '<div class="full-title-redgrad slidebutton">Important Guidelines<span class="arrow-up"></span></div>'
+            . '<ul class="slidebox">'
                 .'<li>'.$checkmark.' Assign a class id in following format Building-Room No EX: A-201.</li>'
                 .'<li>'.$checkmark.' Please give short name to classroom. So that they occupy less space in timetable cell. EX: LH instead of Lecture Hall.</li>'
             . '</ul>'

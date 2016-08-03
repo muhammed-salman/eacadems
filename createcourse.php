@@ -23,8 +23,8 @@ if($loggedin)
 echo <<<_END
     <div id="left">
 _END;
-echo '<div class="info-box"><div class="full-title-redgrad">Important Guidelines</div>'
-        . '<ul>'
+echo '<div class="info-box"><div class="full-title-redgrad slidebutton">Important Guidelines<span class="arrow-up"></span></div>'
+        . '<ul class="slidebox">'
             .'<li>'.$checkmark.' See University Syllabus copy for course id.</li>'
             .'<li>'.$checkmark.' For departments with <y>Two Shifts</y> a course has to be created <y>Two times</y> one for each shift.</li>'
             .'<li>'. 'Example: for CIVIL department Cousre- ID: CE-C301 Title: Applied Mathematics-III should be entered as </li>'
@@ -98,7 +98,7 @@ echo <<<_END
                     <input class="form-input" type="number" placeholder="TW" min="0" max="50" name="ctw" value="0" required >
                 </div>
                 <div>
-                    <label class="form-label">Internal Assessment Marks</label>
+                    <label class="form-label">I. A.  Marks</label>
                     <input class="form-input" type="number" placeholder="IA" min="0" max="20" name="cia" value="0" required >
                 </div>
                 <div>

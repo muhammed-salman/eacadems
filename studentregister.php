@@ -19,8 +19,8 @@ if($loggedin){
 
         echo '<div id="left">';
         echo '<div class="info-box">'
-        . '<div class="full-title-redgrad">Important Guidelines</div>'
-            . '<ul>'
+        . '<div class="full-title-redgrad slidebutton">Important Guidelines<span class="arrow-up"></span></div>'
+            . '<ul class="slidebox">'
                 .'<li>'.$checkmark.' Please Verify the data before submitting the form</li>'
                 .'<li>'.$checkmark.' Name should be written in following sequence<br>Surname FirstName MiddleName</li>'
                 .'<li>'.$checkmark.' Please provide correct Phone / Mobile Number<br>It will be verified</li>'

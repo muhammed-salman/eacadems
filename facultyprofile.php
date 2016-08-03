@@ -22,8 +22,8 @@ if($loggedin)
 echo <<<_END
     <div id="left">        
 _END;
-echo '<div class="info-box"><div class="full-title-redgrad">Important Guidelines</div>'
-        . '<ul>'
+echo '<div class="info-box"><div class="full-title-redgrad slidebutton">Important Guidelines<span class="arrow-up"></span></div>'
+        . '<ul class="slidebox">'
             .'<li>'.$checkmark." All Fields are Manadatory.</li>"
             .'<li>'.$checkmark." Please Enter 0 or N/A if Fields are not applicable.</li>"
         . "</ul>"
@@ -129,12 +129,10 @@ echo <<<_END
             </div>
             <div>
                 <label class="form-label">Your Photo (3.5cm x 4.5cm)</label>    
-                
 _END;
                     displayImage($row[image_id]);
 echo <<<_END
-                
-            <div>
+            </div>
 _END;
 }
 echo <<<_END
@@ -142,17 +140,15 @@ echo <<<_END
                 <label class="form-label">
                     <input class="form-check" type="checkbox" id="photocheck" name="photocheck" value="1"/>
                     Check to Update Photo
-                </label> 
-                
+                </label>     
             </div>
             <div>
                 <label class="form-label">Photo[ Max Size 3 MB]</label>    
                 <input class="form-input" id="fpphoto" type="file" name="image" required="true" disabled="true"/>
-                
-            <div>
-                <button class="button form-button" id="fpupdate" name="fpupdate" onclick="submitForm('facultyprofile.php')">Update</button>
-                <button class="button form-button" id="fpview" name="fpview">View in Printable Format</button>
             </div>
+            <button class="button form-button" id="fpupdate" name="fpupdate" onclick="submitForm('facultyprofile.php')">Update</button>
+            <button class="button form-button" id="fpview" name="fpview">View in Printable Format</button>
+            
           </fieldset>
           <input type="hidden" id="fac_id" name="fac_id" value="$_SESSION[fac_id]" />
             

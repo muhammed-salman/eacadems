@@ -106,14 +106,16 @@ table
     -moz-box-align: center;
     padding: 0.1rem;      
     border-radius: 5px;
+    font-size: 1rem;
     background-color: transparent;
     /*box-sizing: border-box;*/
     /*max-width: 100%;*/
     /*table-layout: fixed;*/
 }
 th{
-    background-color: #00ccff;
-    color: white;
+    background-color: #b1e5ff;
+    color: #000;
+    font-weight: 310 !important;
 }
 
 td:hover,tr:hover,tbody tr:nth-child(odd):hover{
@@ -424,10 +426,10 @@ input[readonly=true],input[readonly=readonly]
     background-size: contain;
     color: transparent;
     display:inline-block;
-    height: 2vw;
-    width:2vw;
+    height: 1.5rem;
+    width:1.5rem;
     margin: 0;
-    margin-top: 0.3vw;
+    margin-top: 0.2rem;
 }
 .search-img{
     display: block;
@@ -437,6 +439,22 @@ input[readonly=true],input[readonly=readonly]
     
 }
 
+#ssearchbtn{
+    width:3.5rem;
+    height:2rem;
+    padding: 0;
+    vertical-align:middle;
+}
+
+#stext{
+    width:50%;
+    vertical-align:middle;
+}
+
+/*#search-container{
+    width:auto;
+    margin-top: 13rem;
+}*/
 p:first-child:first-letter { 
     float: left; color: #903;
     font-size: 75px; line-height: 60px;
@@ -594,6 +612,7 @@ border-style:groove;
  input[type=radio]{height: 1.5rem;}
  .form legend{text-align: left;}
  .form-check{ vertical-align: -0.65rem !important;}
+ 
  .form-input{display: inline-flex !important;}
 }
 div{overflow:hidden;}
@@ -835,19 +854,21 @@ ul.menu li.nav-menu{
 
 #studinfo{
     padding: 4px 4px 4px 6px;
-    margin-top: 0.5rem;
-    margin-left: 0.5rem;
-    margin-right: 0.5rem;
-    border: 1px solid #0078a3;
-    -moz-column-count: 3;
-    -webkit-column-count: 3;
-    column-count: 3;
-    background-color:#666666;
-    font-weight: bold;
-    color: #eeeeee;
+    margin: 0.5rem;
+    border: 0;
+    -moz-column-count: 2;
+    -webkit-column-count: 2;
+    column-count: 2;
+    background-color:#ffffcc;
+    color: #000000;
+    text-align: left;
     text-shadow: -1px -1px 0 rgba(0,0,0,0.1);
 }   
 
+.stud-info-text{
+    display: block;
+    margin-bottom: 0.2rem;
+}
 .row{
     float:bottom;
     position:relative;
@@ -865,11 +886,15 @@ ul.menu li.nav-menu{
 #studca{
     float: bottom;
     position: relative;
-    background-color:#ffff99;
+    background-color:#ffffbb;
     box-sizing: border-box;
     margin: 0.5rem 10px 0.5rem 0.5rem;
-    padding: 0;
-    
+    color:black;
+    border-collapse: collapse;
+}
+
+#studca td, #studca th{
+    padding: 3px;
 }
 
 .arrow_box {
@@ -984,26 +1009,30 @@ blockquote:after          { content: "\275E"; }
 .form-input{
     width:48%;
     max-width: 48%;
-    min-width: 11rem;
+    min-width:11rem;
     margin-left:0.5rem !important;
     margin-bottom: 0.5rem !important;
     vertical-align: middle;
-    display: inline-block;
     text-align: left;
 }
 .form-label{
     width:48%;
     max-width: 48%;
+    min-width:11rem;
     margin-right: 0.5rem;
     margin-bottom: 0.5rem;
-    vertical-align: super ;
+    vertical-align:text-bottom;
+}
+
+.form-input .form-label{
+    display: inline-block;
 }
 .form-button{
     width:auto;
     margin-top: 1rem;
 }
 .form-radio{
-    vertical-align: -0.35rem;
+    vertical-align: -0.1rem;
 }
 .form-check{
     width: 1rem;
@@ -1013,10 +1042,20 @@ blockquote:after          { content: "\275E"; }
 fieldset{
     width: auto;
     max-width: 100%;
-    display:inline;
+    display:inline-block;
     margin: 1rem auto 2rem auto;
     border-radius: 0.5rem;
     border: 3px double #000000;
+}
+
+fieldset.form>div{
+    display: flex;
+}
+fieldset.form>span.show>div{
+    display: flex;
+    background-color: #ffffff;
+    margin-bottom: 0.5em;
+    padding-top: 0.3em;
 }
 .fieldset-sub{
     width: 90%;
@@ -1029,6 +1068,7 @@ fieldset{
     width: 98%;
     box-sizing: border-box;
     background-color: #ff3333;
+    display: inline-block;
     color: #ffffdd;
     padding:0.3rem;
     font-weight: normal;
@@ -1113,6 +1153,10 @@ fieldset{
   width: 100%;
   left:0;
 }
+
+.scrollwrapper>span{
+    margin-left:48%;
+}
 .div-table{
     display: block;
     text-align: left;
@@ -1159,16 +1203,16 @@ fieldset{
     display:initial;
 }
 .left-slide-box{
- width:15rem;
+ width:9rem;
  height: 3rem;
  background: crimson;
  border-radius: 0 0 0.5rem 0.5rem;
 }
 .left-fixed-float{
     position: fixed;
-    float:left;
-    top:50%;
-    left:91%;
+    float:top;
+    top:33%;
+    left:94%;
     -moz-transform: rotate(90deg);/*mozilla firefox*/
     -ms-transform: rotate(90deg); /* IE 9 */
     -webkit-transform: rotate(90deg); /* Chrome, Safari, Opera */
@@ -1182,7 +1226,7 @@ fieldset{
 }
 
 .left-fixed-float:hover{
-    left:90%;
+    left:93%;
     -webkit-transition: all 0.30s ease-in-out;
   -moz-transition: all 0.30s ease-in-out;
   -ms-transition: all 0.30s ease-in-out;
@@ -1285,6 +1329,10 @@ fieldset{
     margin-left: 0.3rem;
 }
 
+.inline-error{
+    display: block;
+}
+
 /*mobile*/
 @media 
 screen and (min-width: 320px) and (max-width: 1024px) ,
@@ -1361,19 +1409,26 @@ screen and (min-device-width : 320px) and (max-device-width : 1024px){
     }
     .form{
         text-align:left !important;
-    
+        max-width: 100%;
     }
-
+    
+    fieldset.form>div{
+        display: block;
+        width:100%;
+    }
+    fieldset.form>span.show>div{
+        display: block;
+    }
     .form-input{
         width:95%;
-        max-width: 100%;
+        max-width: 97%;
         margin-bottom: 0.5rem !important;
-        display: block;
+        display: block !important;
         text-align: left;
     }
     .form-label{
         width:95%;
-        max-width: 100%;
+        max-width: 97%;
         display: block;
         margin-bottom: 0.5rem;
         }
@@ -1413,7 +1468,58 @@ screen and (min-device-width : 320px) and (max-device-width : 1024px){
     .slidebox{
         display: none;
     }
-
+    
+    .search-img{
+        margin-top: 2rem;
+    }
+	/* Force table to not be like tables anymore */
+    #stud-search-table, #stud-search-table thead, 
+    #stud-search-table tbody, #stud-search-table th, #stud-search-table td, #stud-search-table tr { 
+		display: block; 
+    }
+	
+	/* Hide table headers (but not display: none;, for accessibility) */
+    #stud-search-table thead tr { 
+		position: absolute;
+		top: -9999px;
+		left: -9999px;
+    }    
+    
+    #stud-search-table th{
+        display: none;
+    }
+    #stud-search-table tr { border: 1px solid #ccc; }
+	
+    #stud-search-table td { 
+		/* Behave  like a "row" */
+		border: none;
+		border-bottom: 1px solid #eee; 
+		position: relative;
+		padding-left: 30%;
+    }
+	
+    #stud-search-table td:before { 
+		/* Now like a table header */
+		position: absolute;
+		/* Top/left values mimic padding */
+		top: 6px;
+		left: 0.3rem;
+		width: 50%; 
+		padding-right: 10px; 
+		white-space: nowrap;
+                text-align: left;
+	}
+	
+	/*
+	Label the data
+	*/
+    #stud-search-table td:nth-of-type(1):before { content: "Roll No."; }
+    #stud-search-table	td:nth-of-type(2):before { content: "Name"; }
+    #stud-search-table	td:nth-of-type(3):before { content: "Department"; }
+    #stud-search-table	td:nth-of-type(4):before { content: "Sem"; }
+    #stud-search-table	td:nth-of-type(5):before { content: "Year"; }
+    #stud-search-table	td:nth-of-type(6):before { content: "Select"; }
+    #stud-search-table	td:nth-of-type(7):before { content: "View"; }
 }
 
 /*tablets*/

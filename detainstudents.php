@@ -48,7 +48,7 @@ if($_POST){
                     
                     while($row = mysql_fetch_array($result)){
                         $dscourse_id=$row['course_id'];
-                        $multi_sql_query.="INSERT INTO Test VALUES('$value','$dscourse_id','$dsyear',NULL,NULL,NULL);";
+                        $multi_sql_query.="INSERT INTO Test VALUES('$value','$dscourse_id','$dsyear',NULL,NULL);";
                     }
                     $multi_sql_query.="update Student set sem='".$dssem."',year='".$dsyear."' where rollno='".$value."';";
                     
@@ -62,21 +62,34 @@ if($_POST){
                     /* execute multi query */
             
                     //echo ''.$multi_sql_query;
+                    
                 
                     if (mysqli_multi_query($link, $multi_sql_query)) {
-                        echo '<br><div class="success">Record Successfully Updated for Roll no:-'.$value.'</div><br>';   
+                        do{
+                            /* store first result set */
+                            if ($result = mysqli_store_result($link)) {
+                                mysqli_free_result($result);
+                            }
+                            
+                            if (!mysqli_more_results($link)) {
+                                break;
+                            }
+                            if(!mysqli_next_result($link)){
+                                echo "<span class='error'>INSERT/UPDATE Failed : ". mysqli_error($link)."</span>";
+                                die();
+                            }
+                           
+                        }while(true);
                     }
                     else {
-                        echo "<br><div class='error'>INSERT/UPDATE Failed : ". mysqli_error($link)."</div><br>";
+                        echo "<span class='error'>INSERT/UPDATE Failed : ". mysqli_error($link)."</span>";
                         die();
-                
                     }
-                    exit;
-                
                     /* close connection */
                     mysqli_close($link);
-                    /* execute multi query */
             }
+            echo '<span class="success">Record Successfully Updated </span>';
+            header('Refresh: 2; url=filterpromote.php');
         }
     }
     else {

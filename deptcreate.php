@@ -64,8 +64,10 @@ echo <<<_END
                 <div>
                     <label class="form-label">Type</label>
                     <span class="form-input">
-                        <input class="form-radio" type="radio" name="type" id="dteach"  value="TEACHING" required><label class="form-label">Teaching</label>
-                        <input class="form-radio" type="radio" id="dnteach"  name="type" value="NON TEACHING" required><label class="form-label">Non-Teaching</label>
+                        <label class="form-label"><input class="form-radio" type="radio" name="type" id="dteach"  value="TEACHING" required>Teaching</label>
+                    </span>
+                    <span class="form-input">
+                        <label class="form-label form-input" style="margin-left:0 !important;"><input class="form-radio" type="radio" id="dnteach"  name="type" value="NON TEACHING" required>Non-Teaching</label>
                     </span>
                 </div>    
                 <div>

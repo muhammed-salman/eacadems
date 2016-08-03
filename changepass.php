@@ -73,10 +73,8 @@ echo <<<_END
 _END;
 }
 echo <<<_END
-            <div>
                 <input type="submit" class="button form-button" value="Change Password"> 
-            </div>
-        
+            
         </fieldset>
         </form>
 </div>

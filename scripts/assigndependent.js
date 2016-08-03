@@ -908,16 +908,15 @@ $(document).ready(function () {
         });
     });
 
-    $("#recordbtn").click(function (e) {
+    $(".recordbtn").click(function (e) {
         e.preventDefault();
-        submitForm('studrecord.php');
         var dept = $(document.getElementById("srdept")).val();
         var sem = $(document.getElementById("srsem")).val();
         var year = $(document.getElementById("sryear")).val();
         var rollno = $(document.getElementById("srroll")).val();
-        /*if (dept == "" || sem == "" || year == "" || rollno == "")
+        if (dept == "" || sem == "" || year == "" || rollno == "")
             alert("Required Field(s) Missing!");
-        else {*/
+        else {
             var dataString = 'dept=' + dept + '&sem=' + sem + '&year=' + year + '&rollno=' + rollno;
 
             $.ajax({
@@ -936,7 +935,7 @@ $(document).ready(function () {
                     alert(thrownError);
                 }
             });
-        //}
+        }
     });
     
     $("#ssearchbtn").click(function (e) {
@@ -999,8 +998,8 @@ $(document).ready(function () {
     $('.sradio').change(function (e) {
         var i=0,rollno,j=0;
         var sradio=document.getElementsByClassName("sradio");
-        var recordbtn=document.getElementById("recordbtn");
-        recordbtn.disabled=false;
+        /*var recordbtn=document.getElementById("recordbtn");
+        recordbtn.disabled=false;*/
         $(sradio).each(function () {
             rollno=sradio[j].value;
             var element=document.getElementsByClassName(rollno);
@@ -1008,7 +1007,12 @@ $(document).ready(function () {
             if ($(sradio[j]).is(":checked")) {
                 $(element).each(function () {
                     element[i].disabled=false;
-                    element[i].style.backgroundColor="yellow";
+                    if(element[i].type=="button"){
+                        element[i].style.backgroundColor="#555555";
+                    }
+                    else{
+                        element[i].style.backgroundColor="#ccffff";
+                    }
                     i++;
                 });
             }
@@ -1274,7 +1278,7 @@ $(document).ready(function () {
             //  return $content.is(":visible") ? "Collapse" : "Expand";
         });
     });
-
+    var $window = $(this);
     $(window).resize(function(){
         var $window = $(this);
     
@@ -1289,9 +1293,9 @@ $(document).ready(function () {
             $arrowdown.addClass('arrow-up');
         }
     });
-            //$html.removeClass('mobile');
-     
-        //$window.resize(resize).trigger('resize');
+    
+    
+    $window.resize(resize).trigger('resize');
 
     /* Table highlight
      var allCells = $("td, th");

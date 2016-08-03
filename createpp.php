@@ -18,8 +18,8 @@ if($loggedin){
 echo <<<_END
     <div id="left">
 _END;
-echo '<div class="info-box"><div class="full-title-redgrad">Important Guidelines</div>'
-      . '<ul>';
+echo '<div class="info-box"><div class="full-title-redgrad slidebutton">Important Guidelines<span class="arrow-up"></span></div>'
+      . '<ul class="slidebox">';
 echo '<li>'.$checkmark.' This form should be filled by subject incharge strictly, only if he is taking any batch of practicals.</li>'
      .'<li>'.$checkmark.' If subject incharge does not take any batch then any other practical incharge can fill this form based on common agreement.</li>'
      .'<li>'.$checkmark.' This form should be filled only once. Hence all the practical incharge will have same format for plan</li>'
@@ -56,9 +56,7 @@ echo <<<_END
                 <label class="form-label">Enter No. of Exp.</label>
                 <input class="form-input" name="ppexp" type="number" min=1 max=20 required/>
             </div>
-            <div>
-                <input type="submit" class="button form-button" value="Load">
-            </div>
+            <input type="submit" class="button form-button" value="Load">
            </fieldset>
           </div>
 _END;

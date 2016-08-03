@@ -1083,9 +1083,9 @@ function markAttendence()
                     if(!mysql_query($query)){
                          echo "<center><span class='error'>INSERT Failed : ".  mysql_error()."</span></center>";
                         $errflag=1;}
-                    else {
+                    /*else {
                         echo '<div class="success">Record Successfully Inserted for '.$value.'</div>';   
-                    }
+                    }*/
                     $aslot++;
                     $i++;
                  }
@@ -1105,9 +1105,9 @@ function markAttendence()
                         $query="INSERT INTO Absentee VALUES('$value','$acourse_id','$afdol','$ayear','$athorpr','$aslot','$abatch')";
                         if(!mysql_query($query)){
                             echo "<center><span class='error'>INSERT Failed : ".  mysql_error()."</span></center>";                  $errflag=1;}
-                        else {
+                        /*else {
                           echo '<span class="success">Record Successfully Inserted for '.$value.'</span>';   
-                        }
+                        }*/
                         $aslot++;
                         $i++;
                     }
@@ -1268,10 +1268,12 @@ function updateFacultyProfile(){
      
     //echo ''.$query;
             queryMysql($query);
-            echo '<center>'
+           /* echo '<center>'
                     . '<div class="success">'
-                            . 'Profile Successfully Updated</div></center>';            
-            
+                            . 'Profile Successfully Updated</div></center>';*/
+                echo '<script language="javascript">';
+                echo 'alert("Profile Successfully Updated!")';
+                echo '</script>';            
     }
  }
 }

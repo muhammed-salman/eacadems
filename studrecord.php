@@ -30,7 +30,7 @@ if($_POST){
         $semtype=  explode(" ", $year);
         $semtype=$semtype[0];
         echo '<div id="wrapper" style="scrollwrapper">';
-        echo '<span class="fit-title-blackgrad">Personal Information</span>';
+        echo '<span class="full-title-blackgrad" >Personal Information</span>';
         $result=  queryMysql("select * from Student where rollno='".$rollno."'");
         if(mysql_num_rows($result)==0){
             echo '<br><span class="error">No Records Found!</span>';
@@ -38,22 +38,22 @@ if($_POST){
         else {
             echo '<div id="studinfo">';
             while ($row = mysql_fetch_array($result)) {
-                echo '<b>Roll No. : </b>'.$row['rollno'].'<br><br>';
-                echo '<b>Name : </b>'.$row['name'].'<br><br>';
-                echo '<b>Semester : </b>'.$row['sem'].'<br><br>';
-                echo '<b>Department : </b>'.$row['dept'].'<br><br>';
-                echo '<b>Address : </b>'.$row['address'].'<br><br>';
-                echo '<b>Date of Addmission : </b>'.$row['doa'].'<br><br>';
-                echo '<b>Date of Birth : </b>'.$row['dob'].'<br><br>';
-                echo '<b>Phone Number : </b>'.$row['phoneno'].'<br><br>';
-                echo '<b>Parent Phone Number : </b>'.$row['pphoneno'].'<br><br>';
-                echo '<b>Year : </b>'.$row['year'].'<br><br>';
-                echo '<b>Batch : </b>B'.$row['batch'].'<br><br>';
+                echo '<label class="stud-info-text">Roll No. : '.$row['rollno'].'</label>';
+                echo '<label class="stud-info-text">Name : '.$row['name'].'</label>';
+                echo '<label class="stud-info-text">Semester : '.$row['sem'].'</label>';
+                echo '<label class="stud-info-text">Department : '.$row['dept'].'</label>';
+                echo '<label class="stud-info-text">Address : '.$row['address'].'</label>';
+                echo '<label class="stud-info-text">Date of Addmission : '.$row['doa'].'</label>';
+                echo '<label class="stud-info-text">Date of Birth : '.$row['dob'].'</label>';
+                echo '<label class="stud-info-text">Phone Number : '.$row['phoneno'].'</label>';
+                echo '<label class="stud-info-text">Parent Phone Number : '.$row['pphoneno'].'</label>';
+                echo '<label class="stud-info-text">Year : '.$row['year'].'</label>';
+                echo '<label class="stud-info-text">Batch : B'.$row['batch'].'</label>';
             }
         
             echo '</div>';
         }
-        echo '<span class="fit-title-blackgrad">Continous Assessment Information</span>';
+        echo '<span class="full-title-blackgrad">Continous Assessment Information</span>';
        // echo '<div>';
         $query="select c.*,cs.abbrv,t.weightage,t.compo_nos from CA c natural join Course cs natural join TwCompoWeight t where c.rollno='".$rollno."' and c.year='".$year."' order by abbrv asc,compo_nos desc,compo_no asc";         
         $result=  queryMysql($query);
@@ -88,7 +88,12 @@ if($_POST){
                         echo '<td align="center">C'.$compoCount.'</td>';    
                         $prevCompoCount=$compoCount;
                     }
-                    echo '<td align="center">'.$row['marks'].'</td>';
+                    if($row['marks']!="" ||$row['marks']!=NULL){
+                        echo '<td align="center">'.$row['marks'].'</td>';
+                    }
+                    else{
+                        echo '<td align="center">NA</td>';
+                    }
                     if($row['marks']!=NULL){
                                   $compoTotal+=$row['marks'];
                     }
@@ -105,18 +110,20 @@ if($_POST){
             echo '</tr>';
             echo '</table>';
         }
-            echo '<span class="fit-title-redgrad">Test Marks</span>';
-            $result=  queryMysql("select count(course_id) as c from Course where sem='".$sem."' and dept='".$dept."'");
+            echo '<span class="full-title-redgrad">Test Marks</span>';
+            $result=  queryMysql("select count(distinct course_id) as c from Course natural join Teaches where sem='$sem' and dept='$dept' and year='$year' and IA!=0");
             while ($row=  mysql_fetch_array($result)){$ccount=  intval($row['c']);}
             $columns=$ccount*3;
             $query="select * from (
                 select t1.rollno,t1.name,t1.course_id,t1.abbrv,t2.year,t2.t1,t2.t2 from 
                     (select rollno,name,course_id,abbrv from Student s, 
-                        (select course_id,abbrv from Course where dept='".$dept."' and sem='".$sem."') as c where s.dept='".$dept."' and s.sem='".$sem."' and s.year='".$year."' and s.rollno in
+                        (select course_id,abbrv from Course where dept='".$dept."' and sem='".$sem."' and IA!=0) as c where s.dept='".$dept."' and s.sem='".$sem."' and s.year='".$year."' and s.rollno in
                             (select rollno from Test where year='".$year."' and course_id in
-                                (select course_id from Course where dept='".$dept."' and sem='".$sem."'))) as t1 left join (select * from Test where year='".$year."') as t2 on t1.course_id=t2.course_id and t1.rollno=t2.rollno)"
-                    . "as Temp where rollno='".$rollno."'";
- //       echo '<br>'.$query;
+                                (select course_id from Course where dept='".$dept."' and sem='".$sem."' and IA!=0))) as t1 left join "
+                    . "(select * from Test where year='".$year."') as t2 on t1.course_id=t2.course_id and t1.rollno=t2.rollno)"
+                    . "as Temp natural join (select distinct course_id, year from Teaches where batch='0' and THorPR='1' and year='$year') as Temp2"
+                    . " where rollno='".$rollno."'";
+//        echo '<br>'.$query;
             $result=  queryMysql($query);
             if(mysql_num_rows($result)==0)
             {
@@ -125,7 +132,8 @@ if($_POST){
             }
             else{
                 echo '<table id="studca" cellspacing=0 cellpadding=4 border=1 style="border-radius:2px;">';    
-                $res=  queryMysql("select abbrv from Course where dept='".$dept."' and sem='".$sem."'");
+                $res=  queryMysql("select abbrv from Course natural join Teaches where dept='$dept' and sem='$sem' and "
+                        . "year='$year' and THorPR='1'");
                     echo '<tr>';
                         while ($row = mysql_fetch_array($res)) {
                             $abbrv=$row['abbrv'];
@@ -170,13 +178,14 @@ if($_POST){
         
         //Defaulter Information
         
-        echo '<span class="fit-title-redgrad">Attendence</span>';
+        echo '<span class="full-title-redgrad">Attendence</span>';
         $link = mysqli_connect($db_host,$db_user,$db_password,$db_name);
         if (mysqli_connect_errno()) {
            printf("Connect failed: %s\n", mysqli_connect_error());
             exit();
         }
-        $query="select abbrv from Course where dept='".$dept."' and sem='".$sem."' order by abbrv";
+        $query="select distinct abbrv from Course natural join Teaches where dept='".$dept."' and sem='".$sem."' and year='$year'"
+                . " order by abbrv";
         $result= queryMysql($query);
         $num_rows= mysql_num_rows($result);
         $i=$num_rows;

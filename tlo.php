@@ -21,8 +21,8 @@ if($loggedin){
 echo <<<_END
     <div id="left">
 _END;
-echo '<div class="info-box"><div class="full-title-redgrad">Important Guidelines</div>'
-. '<ul>';
+echo '<div class="info-box"><div class="full-title-redgrad slidebutton">Important Guidelines<span class="arrow-up"></span></div>'
+. '<ul class="slidebox">';
 echo '<li>'.$checkmark.' TLO should be created only once.</li>'
            .'<li>'.$checkmark.' Update and viewing facility will work only if TLO is previously created.</li>'
         . '</ul>'
@@ -50,11 +50,9 @@ _END;
                         echo"".academic_year();
 echo <<<_END
 " readonly="true"/>
-                <div>
                    <button class="button form-button" name="createtlo" id="createtlo" onclick="submitForm('tlo.php')">Create TLO</button>
                    <button class="button form-button" name="updatetlo" id="updatetlo" onclick="submitForm('updatetlo.php')">Update TLO</button>
-                   <button class="button form-button" name="viewtlo" id="viewtlo" onclick="submitForm('viewtlo.php')">View TLO</button>
-                </div>        
+                   <button class="button form-button" name="viewtlo" id="viewtlo" onclick="submitForm('viewtlo.php')">View TLO</button>        
             </fieldset>
                             <input type="hidden" name="title" id="title" value=""/>
 _END;
