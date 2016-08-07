@@ -1278,7 +1278,7 @@ $(document).ready(function () {
             //  return $content.is(":visible") ? "Collapse" : "Expand";
         });
     });
-    var $window = $(this);
+    
     $(window).resize(function(){
         var $window = $(this);
     
@@ -1295,7 +1295,7 @@ $(document).ready(function () {
     });
     
     
-    $window.resize(resize).trigger('resize');
+    $(window).trigger('resize');
 
     /* Table highlight
      var allCells = $("td, th");

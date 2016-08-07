@@ -27,36 +27,33 @@ if(isset($_SESSION['user']))
     $userstr="($user)";
 }
  else $loggedin=FALSE;
-if($loggedin){  
 echo "<title>$appname$user</title>".
-     "<link rel='stylesheet' href='/ecadems/style/coresheet.css' type='text/css' />".
+     "<link rel='stylesheet' href='style/coresheet.css' type='text/css' />".
      " <noscript>
         <div class='error'>Your browser doesn't support or has disabled JavaScript.Please enable javascript to continue</div>
         <br>
       </noscript>". 
      "</head><body>".
      "<div id='header'>"
-        . "<div id='logo-image'>"
-        . "<img src='/ecadems/images/college_logo.png' width='100px' height='100px'></div>"
-        . "<div id='colname'>$colname<br></div>"
+        . "<div class='hcontainer'>"
+            . "<div id='applogo-name'>"
+                . "<img src='images/erp_logo.png' class='logo-image'>"
+                . "<div id='appname'>".$appname."</div>"
+            . "</div>"
+            . "<div id='collogo-name'>"
+                . "<img src='images/college_logo.png' class='collogo-image'>"
+                . "<div id='colname'>".$colname."</div>"
+            . "</div>"
+        . "</div>"
         . "</div>";
 
-       echo '<noscript><center><p><h1><font color="red">Err! Something went wrong we are not expecting this.<br>'
+       echo '<noscript><center><p><h1><font color="red">Err! Something went wrong.<br>'
         . 'You know javascript is must for this application to work.<br>'
                . 'So what you are wating for ?  Enabled it now!</font></h1></p></center></noscript>';
 
  
               require_once 'functions/footer.php';
-}
- else {
-echo <<<_END
-<title>404 Not Found</title>
-</head><body>
-<h1>Not Found</h1>
-<p>The requested URL /ecadems/nojs.php was not found on this server.</p>
-<hr>
-<address>Apache/2.4.7 (Ubuntu) Server at localhost Port 80</address>
-</body></html>
-_END;
- }
+
+ 
+ 
 ?>

@@ -174,10 +174,11 @@ updateCA();
                     }
                     echo '<td  width="3%" style="background-color:#66ff66;"><input type="text" class="ctotal" name="'.$prevRoll.'_total" id="'.$prevRoll.'_total" value="'.round($total, 0, PHP_ROUND_HALF_UP).'" readonly="true"/></td>';
                     echo '</tr>';   
-                    echo '<tr>';
-                    echo '<td  colspan="'.$columns.'"> <input type="submit"  value="Update"/></td>';
-                    echo '</tr>';  
+                    //echo '<tr>';
+                   // echo '<td  colspan="'.$columns.'"> <input type="submit"  value="Update"/></td>';
+                    //echo '</tr>';  
                     echo '</table>';
+                    echo '<div><input class="button form-button" style="display:block; margin:0 auto;" type="submit"  value="Update"/></div>';
                     echo '</form></div>';                   
              }
          }

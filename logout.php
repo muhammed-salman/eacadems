@@ -18,16 +18,17 @@
   {
       
       session_destroy();
-    echo "<center><div class='main' style='width:100%;'>You have been logged out.".
-            "<br><h4>You are now being redirected to login page" .
-         "<br> Please<a href='login.php' style='font-size:1em; color:white;'>click here</a> to redirect manually.</div></center><br>";
+    echo "<div class='main info'>You have been logged out.".
+            "<h4>You are now being redirected to login page" .
+         " Please<a href='login.php' style='font-size:1em; color:white;'>click here</a> to redirect manually.</div>";
     header("Refresh: 1; url=login.php");
     exit();
   }
   else
   {   
-      echo "<div class='main' style='width:100%;'><br>" .
-            "You cannot log out because you are not logged in<br><br></div><br>";
+      echo "<div class='main info'>" .
+            "You cannot log out because you are not logged in</div>";
+            header('Refresh:2 ,url=login.php');
   }
   require_once 'functions/footer.php';
 ?>

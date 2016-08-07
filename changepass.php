@@ -86,7 +86,10 @@ else {
 
 }
 
- else echo'Please sign up and/or login to use the system';
+ else{
+     echo'Please sign up and/or login to use the system';
+     header('Refresh:1 ,url=login.php');
+ }
 require_once 'functions/footer.php';
 ?>
         

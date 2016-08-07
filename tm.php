@@ -19,8 +19,8 @@ if($loggedin){
 updateTest();
 //echo '<div id="left">';
 echo '<div class="info-box">'
-. '<div class="full-title-redgrad">Important Guidelines</div>';
-echo '<ul>'
+. '<div class="full-title-redgrad slidebutton">Important Guidelines<span class="arrow-up"></span></div>';
+echo '<ul class="slidebox">'
         . '<li>'.$checkmark.' Please check the test marks before making entry.</li>'
         . '<li>You are not allowed to make the changes once you have submitted the form.</li>'
            .'<li>'.$checkmark.' Following is the color coding scheme on form.</li>'
@@ -58,10 +58,12 @@ echo <<<_END
         <div class="scrollwrapper">    
         <form method="post" id="form1" >
           <center>
-          <table id="tmtable">
-            <th colspan="5">Test Marks Form</th>
+          <table id="tmtable" class="mobile-table">
+            <tr>
+                <th colspan="5">Test Marks Form</th>
+            </tr>
 _END;
-            echo '<tr><td colspan="5"><pre>Course:'.$title.'    Course ID:'.$tsub.'    Year:'.$tyear.'</td></tr>';            
+            echo '<tr><th colspan="5"><pre>Course:'.$title.'    Course ID:'.$tsub.'    Year:'.$tyear.'</pre></th></tr>';            
 echo <<<_END
             <tr>
                 <th>Rollno</th>
@@ -100,10 +102,11 @@ _END;
                 echo  ' style="background-color: white;" /></td>';
             echo '</tr>';
         }
-        echo '<tr>'
-        . '<td colspan="2"><input type="submit" class="button"  name="updatetm" id="updatetm" value="Update Marks" onclick="return validateTestMarks(this)"></td>'
-                . '<td colspan="3"><input type="submit" class="button"  name="viewtm" id="viewtm" value="View in Printable Format" onclick="submitForm(\'viewtm.php\')"></td></tr>';
+//        echo '<tr>'
+//        . '<td colspan="2"></td></tr>';
         echo '</table>';
+        echo '<input type="submit" class="button"  name="updatetm" id="updatetm" value="Update Marks" onclick="return validateTestMarks(this)"></td>'
+                . '<input type="submit" class="button"  name="viewtm" id="viewtm" value="View in Printable Format" onclick="submitForm(\'viewtm.php\')">';
         echo '</center>';
         echo '<input type="hidden" name="tmyear" value="'.$tyear.'"/>';
         echo '<input type="hidden" name="tmsub" value="'.$tsub.'"/>';
@@ -111,7 +114,7 @@ _END;
         echo '<input type="hidden" name="tsub" value="'.$tsub.'"/>';
         echo '<input type="hidden" name="title" value="'.$title.'"/>';
         echo '</form>';
-  //      echo '</div>';
+        echo '</div>';
     }
    }
  }

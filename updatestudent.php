@@ -58,6 +58,11 @@ else{
         $rollno= strtoupper(sanitizeString($_POST[usrollno]));
         $query="select * from Student where rollno='".$rollno."'";
         $result=  queryMysql($query);
+        if(mysql_num_rows($result)==0){
+            echo '<span class="error">Given Roll No does not exist. Redirecting you with in 2 secs....</span>';
+            header('Refresh:2 ,url=updatestudent.php');
+            exit();
+        }
 echo <<<_END
         
         <form method="post" action="updatestudent.php" onsubmit="return validateStudentUpdate(this)">

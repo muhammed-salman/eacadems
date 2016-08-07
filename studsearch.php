@@ -35,7 +35,7 @@ if(!$result || mysql_num_rows($result)==0){
 }
 else {
       
-        echo '<table id="stud-search-table" cellspacing="10" cellpadding="4" border="0" bgcolor="#00eeee">';
+        echo '<table id="stud-search-table" class="mobile-table" cellspacing="10" cellpadding="4" border="0" bgcolor="#00eeee">';
            echo '<tr>';
                     echo '<th align="center" width="8%">Roll No.</th>';
                     echo '<th align="center" width="25%">Name</th>';

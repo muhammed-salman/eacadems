@@ -19,6 +19,7 @@ if($_POST){
     if(isset($_POST['fac_id'])){
 $result=  queryMysql("select fp.*,f.*,d.name as dept_name from FacultyProfile fp natural join Faculty f join Department d on d.dept_id=f.dept where fp.fac_id='".$_POST['fac_id']."'");       
 echo <<<_END
+    <div class="scrollwrapper">
       <form method="post" id="form1">
         <center>
           <table id="pdfTable" cellspacing="0" cellpadding="2" border="1" bgcolor="transparent">
@@ -233,6 +234,7 @@ echo <<<_END
 
         </center>    
      </form>
+    </div>    
 
 _END;
  }

@@ -18,7 +18,7 @@ require_once 'functions/header.php';
          if($_SESSION['grid']==='3'||$_SESSION['grid']==='7'||$_SESSION['grid']==='2'){
 echo <<<_END
        
-    <div id="wrapper" name="wrapper" style="overflow-x:auto;">    
+    <div id="wrapper" name="wrapper"  style="overflow-x:auto;">    
    <form method="post" id="form1">
         
         <fieldset class="form">
@@ -37,9 +37,7 @@ _END;
 echo <<<_END
                 </select>
             </div>
-            <div>
-               <button class="button form-button" name="loadtm" id="loadtm">Load</button>
-            </div>
+            <button class="button form-button" name="loadtm" id="loadtm">Load</button>
                     
            </fieldset>
 _END;

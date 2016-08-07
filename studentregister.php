@@ -113,9 +113,7 @@ if($loggedin){
                             <option value="4">B4</option>
                         </select>   
             </div>
-            <div>
                 <input  type="submit" tabindex="12" class="button form-button" value="Register">
-            </div>
            </fieldset>
        </form>
     </div>

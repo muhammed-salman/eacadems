@@ -31,63 +31,58 @@ if($loggedin){
     <div id="right">   
      <form method="post" action="studentdetails.php">
          <fieldset class="form">
-          <legend class="fit-title-blackgrad">Student Details</legend> 
-          <fieldset class="form fieldset-sub">
-           <legend class="fit-title-blackgrad">Personal Details</legend> 
-           <div> 
-                <label class="form-label">Roll no</label>
-                
+            <legend class="fit-title-blackgrad">Student Details</legend> 
+            <fieldset class="form fieldset-sub">
+                <legend class="fit-title-blackgrad">Personal Details</legend> 
+                <div> 
+                    <label class="form-label">Roll no</label>
                     <input class="form-input" type="text" tabindex="1" maxlength="10" placeholder="Your Roll No, Ex: 14CO00" name="sdrollno" id="sdrollno" required>
                     <span id="rollerr"></span>
+                </div>
+                <div>
+                    <label class="form-label">Time Spent on Study (hrs/day)</label>
+                    <input class="form-input" type="number" tabindex="2" name="sdstudy" min="0" max="12" required value="0">
+                </div>    
+                <div>
+                    <label class="form-label">Physical Health</label>
+                    <span class="form-input">
+                        <label class="form-label"><input class="form-radio" type="radio" tabindex="3" name="sdhealth" id="sdpoor" value="poor" required>Poor</label> 
+                        <label class="form-label"><input class="form-radio" type="radio" tabindex="4" name="sdhealth" id="sdaverage" value="average" required>Average</label> 
+                        <label class="form-label"><input class="form-radio" type="radio" tabindex="5" name="sdhealth" id="sdgood" value="good" required>Good</label>
+                        <label class="form-label"><input class="form-radio" type="radio" tabindex="6" name="sdhealth" id="sdexcellent" value="excellent" required>Excellent</label>
+                    </span>
            </div>
-           <div>
-                <label class="form-label">Time Spent on Study (hrs/day)</label>
-                <input class="form-input" type="number" tabindex="2" name="sdstudy" min="0" max="12" required value="0">
-           </div>    
-           <div>
-                <label class="form-label">Physical Health</label>
-                <span class="form-input">
-                    <input class="form-radio" type="radio" tabindex="3" name="sdhealth" id="sdpoor" value="poor" required><label class="form-label">Poor</label> 
-                    <input class="form-radio" type="radio" tabindex="4" name="sdhealth" id="sdaverage" value="average" required><label class="form-label">Average</label> 
-                    <input class="form-radio" type="radio" tabindex="5" name="sdhealth" id="sdgood" value="good" required><label class="form-label">Good</label>
-                    <input class="form-radio" type="radio" tabindex="6" name="sdhealth" id="sdexcellent" value="excellent" required><label class="form-label">Excellent</label>
-                </span>
-           </div>
-           <div>
+                <div style="display: block;">
                 <label class="form-label">Did you take private tution classes ?</label>
                 <span class="form-input">
-                    <input class="form-radio" type="radio" tabindex="7" name="sdclasses" id="sdclassyes" value="yes" required><label class="form-label">Yes</label> 
-                    <input class="form-radio" type="radio" tabindex="8" name="sdclasses" id="sdclassno" value="no" required><label class="form-label">No</label>                 
+                    <label class="form-label"><input class="form-radio" type="radio" tabindex="7" name="sdclasses" id="sdclassyes" value="yes" required>Yes</label> 
+                    <label class="form-label"><input class="form-radio" type="radio" tabindex="8" name="sdclasses" id="sdclassno" value="no" required>No</label>                 
                 </span>    
            </div>
            <div> 
                 <label class="form-label">Source of fees</label>
                 <span class="form-input">
-                    <input class="form-radio" type="radio" tabindex="9" name="sdsource" id="sdparents" value="parents" required><label class="form-label">Parents</label>
-                    <input class="form-radio" type="radio" tabindex="10" name="sdsource" id="sdrealtives" value="relatives" required><label class="form-label">Relatives</label>
-                </span>
-                <span class="form-input">
-                    <input class="form-radio" type="radio" tabindex="11" name="sdsource" id="sdscholar" value="scholarship" required><label class="form-label">Scholarship</label>
-                    <input class="form-radio" type="radio" tabindex="12" name="sdsource" id="sdmultiple" value="multiple" required><label class="form-label">Multiple Sources</label>
+                    <label class="form-label"><input class="form-radio" type="radio" tabindex="9" name="sdsource" id="sdparents" value="parents" required>Parents</label>
+                    <label class="form-label"><input class="form-radio" type="radio" tabindex="10" name="sdsource" id="sdrealtives" value="relatives" required>Relatives</label>
+                    <label class="form-label"><input class="form-radio" type="radio" tabindex="11" name="sdsource" id="sdscholar" value="scholarship" required>Scholarship</label>
+                    <label class="form-label"><input class="form-radio" type="radio" tabindex="12" name="sdsource" id="sdmultiple" value="multiple" required>Multiple Sources</label>
                 </span>
             </div>
             <div>
                 <label class="form-label">Have you ever got the educational drop in engg?</label>
                 <span class="form-input">
-                    <input class="form-radio" type="radio" tabindex="13" name="sddrop" id="sddropyes" value="yes" required><label class="form-label">Yes</label> 
-                    <input class="form-radio" type="radio" tabindex="14" name="sddrop" id="sddropno" value="no" required><label class="form-label">No</label>                
+                    <label class="form-label"><input class="form-radio" type="radio" tabindex="13" name="sddrop" id="sddropyes" value="yes" required>Yes</label> 
+                    <label class="form-label"><input class="form-radio" type="radio" tabindex="14" name="sddrop" id="sddropno" value="no" required>No</label>                
                 </span>    
             </div>
             <div>
                 <label class="form-label">Please rate the overall Campus Environment?</label>
                 <span class="form-input">
-                    <input class="form-radio" type="radio" tabindex="15" name="sdcampus" id="sdworts" value="1" required><label class="form-label">Worst</label>
-                    <input class="form-radio" type="radio" tabindex="16" name="sdcampus" id="sdbad" value="2" required><label class="form-label">Not good</label>
-                </span>
-                <span class="form-input">
-                    <input class="form-radio" type="radio" tabindex="17" name="sdcampus" id="sdneutral" value="3" required><label class="form-label">Neutral</label>
-                    <input class="form-radio" type="radio" tabindex="18" name="sdcampus" id="sdcampusgood" value="4" required><label class="form-label">Good</label>
-                    <input class="form-radio" type="radio" tabindex="19" name="sdcampus" id="sdbest" value="5" required><label class="form-label">Best</label>
+                    <label class="form-label"><input class="form-radio" type="radio" tabindex="15" name="sdcampus" id="sdworts" value="1" required>Worst</label>
+                    <label class="form-label"><input class="form-radio" type="radio" tabindex="16" name="sdcampus" id="sdbad" value="2" required>Not good</label>
+                    <label class="form-label"><input class="form-radio" type="radio" tabindex="17" name="sdcampus" id="sdneutral" value="3" required>Neutral</label>
+                    <label class="form-label"><input class="form-radio" type="radio" tabindex="18" name="sdcampus" id="sdcampusgood" value="4" required>Good</label>
+                    <label class="form-label"><input class="form-radio" type="radio" tabindex="19" name="sdcampus" id="sdbest" value="5" required>Best</label>
                 </span>    
             </div>
             <div>
@@ -116,8 +111,8 @@ if($loggedin){
             <div>
                 <label class="form-label">what type of area do you stay?</label>
                 <span class="form-input">
-                    <input class="form-radio" type="radio" tabindex="13" name="sdloc_type" id="sdrural"  value="RURAL" required><label class="form-label">Rural</label>
-                    <input class="form-radio" type="radio" tabindex="14" name="sdloc_type" id="sdurban" value="URBAN" required><label class="form-label">Urban</label>                
+                    <label class="form-label"><input class="form-radio" type="radio" tabindex="13" name="sdloc_type" id="sdrural"  value="RURAL" required>Rural</label>
+                    <label class="form-label"><input class="form-radio" type="radio" tabindex="14" name="sdloc_type" id="sdurban" value="URBAN" required>Urban</label>                
                 </span>    
             </div>
          </fieldset>
@@ -126,9 +121,9 @@ if($loggedin){
             <div>
                 <label class="form-label">Family Type</label>
                 <span class="form-input">
-                    <input class="form-radio" type="radio" tabindex="21" name="sdfamily" id="sdsimple" value="nuclear" required><label class="form-label">Nuclear / Simple Family</label>
-                    <input class="form-radio" type="radio" name="sdfamily" tabindex="22" id="sdjoint" value="joint" required><label class="form-label">Joint Family</label>
-                    <input class="form-radio" type="radio" name="sdfamily" tabindex="23" id="sdextend" value="extended" required><label class="form-label">Extended Family</label>
+                    <label class="form-label" style="white-space: nowrap;"><input class="form-radio" type="radio" tabindex="21" name="sdfamily" id="sdsimple" value="nuclear" required>Nuclear / Simple Family</label>
+                    <label class="form-label"><input class="form-radio" type="radio" name="sdfamily" tabindex="22" id="sdjoint" value="joint" required>Joint Family</label>
+                    <label class="form-label"><input class="form-radio" type="radio" name="sdfamily" tabindex="23" id="sdextend" value="extended" required>Extended Family</label>
                 </span>    
             </div> 
             <div>
@@ -223,8 +218,8 @@ if($loggedin){
             <div>
                     <label class="form-label">Orphan</label>
                     <span class="form-input">
-                        <input class="form-radio" type="radio" tabindex="32" name="sdorphan" id="sdorpyes"  value="yes" required><label class="form-label">Yes</label>
-                        <input class="form-radio" type="radio" tabindex="33" name="sdorphan" id="sdorpno" value="no" required><label class="form-label">No</label> 
+                        <label class="form-label"><input class="form-radio" type="radio" tabindex="32" name="sdorphan" id="sdorpyes"  value="yes" required>Yes</label>
+                        <label class="form-label"><input class="form-radio" type="radio" tabindex="33" name="sdorphan" id="sdorpno" value="no" required>No</label> 
                     </span>    
             </div>
          </fieldset>
@@ -250,8 +245,8 @@ if($loggedin){
             <div>
                     <label class="form-label">Medium of Education</label>
                     <span class="form-input">
-                        <input class="form-radio" type="radio" tabindex="37" name="sdmedium" id="sdeng" value="english" required><label class="form-label">English</label>
-                        <input class="form-radio" type="radio" tabindex="38" name="sdmedium" id="sdother" value="vernacular" required><label class="form-label">Vernacular</label>
+                        <label class="form-label"><input class="form-radio" type="radio" tabindex="37" name="sdmedium" id="sdeng" value="english" required>English</label>
+                        <label class="form-label"><input class="form-radio" type="radio" tabindex="38" name="sdmedium" id="sdother" value="vernacular" required>Vernacular</label>
                     </span>    
             </div>
             <div>
@@ -265,9 +260,8 @@ if($loggedin){
                         </select>
             </div>
         </fieldset>
-            <div>
+            <br>
                 <input type="submit" tabindex="40" class="button form-button" value="Submit">
-            </div>
      </fieldset>
             
         

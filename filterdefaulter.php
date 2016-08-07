@@ -91,7 +91,10 @@ _END;
 
 }
 
- else echo'<span class="error">Please sign up and/or login to use the system</span>';
+ else{
+     echo'<span class="error">Please sign up and/or login to use the system</span>';
+     header('Refresh:1 ,url=login.php');
+ }
      require_once 'functions/footer.php';
 ?>
 

@@ -21,8 +21,8 @@ insertFacultyStaff();
     if($_SESSION['grid']==='3'||$_SESSION['grid']==='2'||$_SESSION['grid']==='9'){*/
 echo '<div id="left">';
 echo '<div class="info-box">'
-        . '<div class="full-title-redgrad">Important Guidelines</div>'
-            . '<ul>'
+        . '<div class="full-title-redgrad slidebutton">Important Guidelines<span class="arrow-up"></span></div>'
+            . '<ul class="slidebox">'
                 .'<li>'.$checkmark.' Employee ID could be assigned as Faculty / Staff ID</li>'
                 .'<li>'.$checkmark.' Name Should be written in following sequence.<br>FirstName MiddleName Surname</li>'
                 .'<li>'.$checkmark.' Photo Should be of Passport size in .jpg/.png format only.</li>'
@@ -140,9 +140,9 @@ echo <<<_END
                 <label class="form-label">Upload Photo[<font size="2">Max Size 3 MB</font>]</label>    
                 
                     <input class="form-input" type="file" name="image" required="true"/>
-            <div>
-                <input type="submit" class="button form-button" value="Register">
             </div>
+            <input type="submit" class="button form-button" value="Register">
+            
           </fieldset>
             
      </form>  

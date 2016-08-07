@@ -52,24 +52,25 @@ _END;
               echo '<br><center><span class="error">No Records Found</span></center><br>';
             }
             else {
-                echo '<table cellspacing="0" cellpadding="4" border="1" style="text-align:center;" bgcolor="#00eeee">';
+                echo '<div class="scrollwrapper">';
+                echo '<table class="mobile-table" id="viewsy-distribution">';
                 while($rowc=  mysql_fetch_array($resc)){
                     echo '<tr><th colspan="9" align="center"><b>MARKS DISTRIBUTION</b></th>'
                     . '<th colspan="4" align="center"><b>CREDITS DISTRIBUTION</b></th></tr>';
                     echo '<tr>';
-                    echo '<td><b>Course Code</b></td>';
-                    echo '<td><b>Course Title</b></td>';
-                    echo '<td><b>Semester</b></td>';
-                    echo '<td><b>Internal Assesment</b></td>';
-                    echo '<td><b>TH</b></td>';
-                    echo '<td><b>TW</b></td>';
-                    echo '<td><b>PR</b></td>';
-                    echo '<td><b>OR</b></td>';
-                    echo '<td><b>Total</b></td>';
-                    echo '<td><b>TH</b></td>';
-                    echo '<td><b>TW/PR</b></td>';
-                    echo '<td><b>Tutorial</b></td>';
-                    echo '<td><b>Total</b></td>';
+                    echo '<th>Course Code</th>';
+                    echo '<th>Course Title</th>';
+                    echo '<th>Semester</th>';
+                    echo '<th>Internal Assesment</th>';
+                    echo '<th>TH</th>';
+                    echo '<th>TW</th>';
+                    echo '<th>PR</th>';
+                    echo '<th>OR</th>';
+                    echo '<th>Total</th>';
+                    echo '<th>TH</th>';
+                    echo '<th>TW/PR</th>';
+                    echo '<th>Tutorial</th>';
+                    echo '<th>Total</th>';
                     echo '</tr>';
                     echo '<tr>';
                     echo '<td>'.$rowc['course_id'].'</td>';
@@ -118,6 +119,10 @@ _END;
      
  }
 }
- else echo'<br><br><center><span class="error">Please sign up and/or login to use the system</span></center>';          
+ else{
+     echo'<br><br><center><span class="error">Please sign up and/or login to use the system</span></center>';          
+ 
+     header('Refresh:0 ,url=login.php');
+ }
 require_once 'functions/footer.php';
  ?>

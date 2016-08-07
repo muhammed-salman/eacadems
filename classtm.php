@@ -142,5 +142,5 @@ _END;
     }
    }
    else 
-     echo 'Data not posted';
+     echo '<span class="error">Data not posted</span>';
 ?>

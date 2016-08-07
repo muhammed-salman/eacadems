@@ -59,13 +59,13 @@ if($loggedin){
                     </select>
                 </div>
                 <div><label class="form-label">Select the information required</label> </div>
-                <div>
+                <div style="display:block;">
                     <label class="form-label"><input class="form-check" type="checkbox" name="fsirollno"  checked="checked">Roll no</label>
                     <label class="form-label"><input class="form-check" type="checkbox" name="fsiname"  checked="checked">Name</label>
                     <label class="form-label"><input class="form-check" type="checkbox" name="fsiaddress"  checked="checked">Address</label>
                     <label class="form-label"><input class="form-check" type="checkbox" name="fsidoa"  checked="checked">DOA</label>
                 </div>
-                <div>
+                <div style="display:block;">
                     <label class="form-label"><input class="form-check" type="checkbox" name="fsidob"  checked="checked">DOB</label>
                     <label class="form-label"><input class="form-check" type="checkbox" name="fsiphoneno"  checked="checked">Phone no</label>
                     <label class="form-label"><input class="form-check" type="checkbox" name="fsiemail"  checked="checked">Email</label>
@@ -79,10 +79,12 @@ if($loggedin){
 <?php
  }
  else {
-      echo '<br><br><span class="error">Access Denied! You are not authorized to view this section</span>';    
+      echo '<span class="error">Access Denied! You are not authorized to view this section</span>';    
  }
 
 }
-
- else echo'<br><br><span class="error">Please sign up and/or login to use the system</span>';
+ else{
+     echo'<span class="error">Please sign up and/or login to use the system</span>';
+     header('Refresh:1 ,url=login.php');
+ }
 require_once 'functions/footer.php';?>

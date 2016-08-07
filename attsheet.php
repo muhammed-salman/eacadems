@@ -15,8 +15,7 @@
 */
 
 
-require_once 'functions/subheader.php';     
-        
+require_once 'functions/subheader.php';        
 if($_POST)
 {
 

@@ -36,9 +36,7 @@ if($loggedin){
                     <select name="frid" id="frid" class="facstaff form-input" required>
                     </select>   
                 </div>
-                <div>
-                    <input type="button" class="button form-button" id="frrecord" name="frrecord" value="Get Record">
-                </div>
+                <input type="button" class="button form-button" id="frrecord" name="frrecord" value="Get Record">
             </fieldset>
        
         </form>
@@ -51,5 +49,8 @@ if($loggedin){
 
 }
 
- else echo'<span class="error">Please sign up and/or login to use the system</span>';
+ else{
+     echo'<span class="error">Please sign up and/or login to use the system</span>';
+     header('Refresh:1 ,url=login.php');
+ }
 require_once 'functions/footer.php';?>

@@ -15,67 +15,65 @@
 */
 
     
-    require_once 'functions/header.php';
-    insertDept();
-
+require_once 'functions/header.php';
 if($loggedin){
-if($_SESSION['grid']==='3'||$_SESSION['grid']==='1'||$_SESSION['grid']==='9'){    
-echo '<div id="left">';
-echo '<div class="info-box">'
-        . '<div class="full-title-redgrad">Important Guidelines</div>'
-            . '<ul>'
+    
+    if($_SESSION['grid']==='3'||$_SESSION['grid']==='1'||$_SESSION['grid']==='9'){    
+        if($_POST){    
+            insertDept();
+        }
+        echo '<div id="left">';
+        echo '<div class="info-box">'
+        . '<div class="full-title-redgrad slidebutton">Important Guidelines<span class="arrow-up"></span></div>'
+            . '<ul class="slidebox">'
                 .'<li>'.$checkmark.' For Non Teaching departments Intake should be 0.</li>'
             . '</ul>'
         . '</div>';
 echo <<<_END
      
-   </div>
-    <div id="right">    
+        </div>
+        <div id="right">    
 
-        <form method="post" action="deptcreate.php" onsubmit="return validateDept(this)">
+            <form method="post" action="deptcreate.php" onsubmit="return validateDept(this)">
          
-            <fieldset class="form">
-                <legend class="fit-title-blackgrad">Create Department</legend>
-                <div>
-                    <label class="form-label">Department ID</label>
-                    <input class="form-input" type="text" name="dept_id" placeholder="Ex: CO" maxlength="6" required>
-                </div>
-                <div>
-                    <label class="form-label">Name</label>
-                    <input class="form-input" type="text" name="dname" placeholder="Ex: COMPUTER ENGG" maxlength="45" required>
-                </div>
-                <div>
-                    <label class="form-label">HOD</label>
-                    <select required name="dhod" class="form-input">
+                <fieldset class="form">
+                    <legend class="fit-title-blackgrad">Create Department</legend>
+                    <div>
+                        <label class="form-label">Department ID</label>
+                        <input class="form-input" type="text" name="dept_id" placeholder="Ex: CO" maxlength="6" required>
+                    </div>
+                    <div>
+                        <label class="form-label">Name</label>
+                        <input class="form-input" type="text" name="dname" placeholder="Ex: COMPUTER ENGG" maxlength="45" required>
+                    </div>
+                    <div>
+                        <label class="form-label">HOD</label>
+                        <select required name="dhod" class="form-input">
                             <option value="NULL">-No HOD-</option>
 _END;
                     loadFaculty();        
 echo <<<_END
                         </select>
-                </div>
-                <div>
-                    <label class="form-label">Intake</label>
-                    <input class="form-input" type="number" name="dintake" min="0" placeholder="Ex: 60" value="" required>
-                </div>
-                <div>
-                    <label class="form-label">Month & Year of Estd.</label>
-                    <input class="form-input" type="text" name="destd" placeholder="Ex: MARCH 2015" required value=""  required>
-                </div>
-                <div>
-                    <label class="form-label">Type</label>
-                    <span class="form-input">
-                        <label class="form-label"><input class="form-radio" type="radio" name="type" id="dteach"  value="TEACHING" required>Teaching</label>
-                    </span>
-                    <span class="form-input">
-                        <label class="form-label form-input" style="margin-left:0 !important;"><input class="form-radio" type="radio" id="dnteach"  name="type" value="NON TEACHING" required>Non-Teaching</label>
-                    </span>
-                </div>    
-                <div>
+                    </div>
+                    <div>
+                        <label class="form-label">Intake</label>
+                        <input class="form-input" type="number" name="dintake" min="0" placeholder="Ex: 60" value="" required>
+                    </div>
+                    <div>
+                        <label class="form-label">Month & Year of Estd.</label>
+                        <input class="form-input" type="text" name="destd" placeholder="Ex: MARCH 2015" required value=""  required>
+                    </div>
+                    <div>
+                        <label class="form-label">Type</label>
+                        <span class="form-input">
+                            <label class="form-label"><input class="form-radio" type="radio" name="type" id="dteach"  value="TEACHING" required>Teaching</label>
+                            <label class="form-label"><input class="form-radio" type="radio" id="dnteach"  name="type" value="NON TEACHING" required>Non-Teaching</label>
+                        </span>
+                    </div>    
                     <input type="submit" class="form-button button" value="Create">
-                </div>
-            </fieldset>
+                </fieldset>
          
-        </form>
+            </form>
         </div>
 _END;
 }
@@ -85,6 +83,9 @@ _END;
 
 }
 
- else echo'<span class="error">Please sign up and/or login to use the system</span>';
+ else{ 
+     echo'<span class="error">Please sign up and/or login to use the system</span>';
+     header('Refresh:1 ,url=login.php');
+ }
 require_once 'functions/footer.php';
 ?>

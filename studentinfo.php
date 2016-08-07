@@ -69,43 +69,40 @@ if(!$result)
  echo '<div style="overflow-x:scroll;">'; 
  echo '<center>';
  echo '<form id="form1" method="post">';
- echo '<table id="pdfTable" width="100%" cellspacing="0" cellpadding="4" border="1" bgcolor="WHITE">';
-                echo '<tr rowspan="3"><td colspan="2" align="center"><img src="images/college_logo.jpg" ></td>'.
-                      '<td colspan="7" align="center"><h3 align="center">'.$colname.'</h3></td></tr>';
-                echo '<tr>';
-
-                 echo '<td colspan="9" align="center"><pre><b>Department: '.$fsidept.'      Semester: '.$fsisem.'      Year: '.$fsiyear.'</b></pre></td>';
-               
-                
+ echo '<table id="pdfTable" class="stud-info-table mobile-table" width="100%" cellspacing="0" cellpadding="4" border="1" bgcolor="WHITE">';
+            echo '<tr rowspan="3"><th colspan="2" ><img src="images/college_logo.jpg" ></th>'.
+                      '<th colspan="7" ><h3 >'.$colname.'</h3></th></tr>';
+            echo '<tr>';
+                 echo '<th colspan="9" ><pre><b>Department: '.$fsidept.'      Semester: '.$fsisem.'      Year: '.$fsiyear.'</b></pre></th>';
            echo '</tr>';
 echo <<<_END
            <tr>
 _END;
-    echo '<th align="center">Sr.No.</th>';
+    echo '<th>Sr.No.</th>';
 if(isset($_POST['fsirollno']))
-    echo '<th align="center">Roll No</th>';
+    echo '<th>Roll No</th>';
 if(isset($_POST['fsiname']))
-    echo '<th align="center">Name</th>';
+    echo '<th>Name</th>';
 if(isset($_POST['fsiaddress']))
-    echo '<th align="center">Address</th>';
+    echo '<th>Address</th>';
 if(isset($_POST['fsidoa']))
-    echo '<th align="center">DOA</th>';
+    echo '<th>DOA</th>';
 if(isset($_POST['fsidob']))
-    echo '<th align="center">DOB</th>';
+    echo '<th>DOB</th>';
 if(isset($_POST['fsiphoneno']))
-    echo '<th align="center">Phone No.</th>';
+    echo '<th>Phone No.</th>';
 if(isset($_POST['fsiemail']))
-    echo '<th align="center">Email</th>';
+    echo '<th>Email</th>';
 if(isset($_POST['fsipphoneno']))
-    echo '<th align="center">Parents No.</th>';
+    echo '<th>Parents No.</th>';
 
 echo '</tr>';
 
 while($row = mysql_fetch_array($result)){
     echo '<tr>';
-        echo '<td align="center">'.$srCount.'</td>';
+        echo '<td >'.$srCount.'</td>';
     if(isset($_POST['fsirollno']))
-        echo '<td align="center">'.$row["rollno"].'</td>';
+        echo '<td >'.$row["rollno"].'</td>';
     if(isset($_POST['fsiname']))
         echo '<td>'.$row["name"].'</td>';
     if(isset($_POST['fsiaddress']))
@@ -125,7 +122,7 @@ while($row = mysql_fetch_array($result)){
     
 }
 date_default_timezone_set("Asia/Kolkata");
-echo '<tr><td colspan=8 align="center"><pre>';
+echo '<tr><td colspan=8 ><pre>';
 echo 'Report Generated on: '.date("d/m/Y").' at  '.date("h:i:sa").'  by- '.$appname.'-Account-'.$user.'</td></tr>';
 echo '</table>';
     echo '<input type="button" width="100%" class="button" name="generatepdf" id="generatepdf" value="Generate PDF"/>';

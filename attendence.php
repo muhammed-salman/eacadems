@@ -40,7 +40,7 @@ if($_POST)
         while($i<=$insCount){
         
             $query="INSERT INTO `Th_Pr-Record` VALUES('$fsub','$fdol','$fyear','$fthpr','$fslot','$fbatch','$fnol')";
-            queryMysql($query);
+            //queryMysql($query);
             $i++;
             $fslot++;
         }
@@ -68,8 +68,8 @@ echo <<<_END
  
     <div id="left">
 _END;
-echo '<div class="info-box"><div class="full-title-redgrad">Important Guidelines</div>';
-echo '<ul>'
+echo '<div class="info-box"><div class="full-title-redgrad slidebutton">Important Guidelines<span class="arrow-up"></span></div>';
+echo '<ul class="slidebox">'
         . '<li>'.$checkmark.' Do not close the window / leave the page before submitting the form,'
            .' else no absentee will be marked.</li>'
     . '</ul>'
@@ -126,7 +126,7 @@ _END;
 }
  else {
      echo'<span class="error">Please sign up and/or login to use the system</span>';
-    
+     header('Refresh:1 ,url=login.php');
 }
 require_once 'functions/footer.php';
 ?>

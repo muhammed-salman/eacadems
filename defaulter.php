@@ -291,8 +291,8 @@ SET SQL_SAFE_UPDATES = 1;";
     }
 }
  else {
-     echo'<br><br><span class="error">Please sign up and/or login to use the system</span>';
-    
+    echo'<br><br><span class="error">Please sign up and/or login to use the system</span>';
+    header('Refresh:1 ,url=login.php');
 }
 require_once 'functions/footer.php';
 ?>

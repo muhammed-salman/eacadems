@@ -77,11 +77,7 @@ echo <<<_END
                     <label class="form-label"><input type="radio" class="form-radio" name="asthpr" value=0 required>Practical</label>
                 </span>    
             </div>
-
-            <div>
-                <button class="button form-button" name="attsheet" id="attsheet">Load</button>
-            </div>
-                    
+            <button class="button form-button" name="attsheet" id="attsheet">Load</button>
            </fieldset>
 _END;
           echo '<input type="hidden" name="ffac_id" id="ffac_id" value="'.$_SESSION['fac_id'].'" />';
@@ -99,7 +95,10 @@ _END;
 
 }
 
- else echo'Please sign up and/or login to use the system';
+ else{
+     echo'Please sign up and/or login to use the system';
+     header('Refresh:1 ,url=login.php');
+ }
   require_once 'functions/footer.php';
 ?>
 

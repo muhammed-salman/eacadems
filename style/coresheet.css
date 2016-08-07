@@ -111,6 +111,7 @@ table
     /*box-sizing: border-box;*/
     /*max-width: 100%;*/
     /*table-layout: fixed;*/
+    border-collapse: collapse;
 }
 th{
     background-color: #b1e5ff;
@@ -1271,11 +1272,26 @@ fieldset.form>span.show>div{
     width: 3rem;
     
 }
+.tmroll{width: auto;}
 
+#viewtm{
+    margin-left: 1em;
+}
 .tmt1,.tmt2{
     background-color: white;
 }
 
+#viewsy-distribution,.stud-info-table{
+    border-collapse: collapse;
+    text-align: center;
+}
+
+#viewsy-distribution td,#viewsy-distribution th,#viewsy-distribution tr,
+.stud-info-table td, .stud-info-table th, .stud-info-table tr{
+    border: 1px solid black;
+    padding: 5px;
+    
+}
 .btnwhite{
     color: white;
 }
@@ -1331,6 +1347,10 @@ fieldset.form>span.show>div{
 
 .inline-error{
     display: block;
+}
+
+.slidebutton:hover{
+    cursor:grab;
 }
 
 /*mobile*/
@@ -1472,33 +1492,46 @@ screen and (min-device-width : 320px) and (max-device-width : 1024px){
     .search-img{
         margin-top: 2rem;
     }
+    
+    #tmtable{
+        margin-top: 4rem;
+    }
+    
+    #viewsy-distribution,.stud-info-table{
+        text-align: right;
+    }
+
+    #viewsy-distribution td{
+        padding-left: 35%;
+    }
 	/* Force table to not be like tables anymore */
-    #stud-search-table, #stud-search-table thead, 
-    #stud-search-table tbody, #stud-search-table th, #stud-search-table td, #stud-search-table tr { 
+    .mobile-table, .mobile-table thead, 
+    .mobile-table tbody, .mobile-table th, .mobile-table td, .mobile-table tr { 
 		display: block; 
     }
 	
 	/* Hide table headers (but not display: none;, for accessibility) */
-    #stud-search-table thead tr { 
+    .mobile-table thead tr { 
 		position: absolute;
 		top: -9999px;
 		left: -9999px;
     }    
     
-    #stud-search-table th{
+    .mobile-table th{
         display: none;
     }
-    #stud-search-table tr { border: 1px solid #ccc; }
+    .mobile-table tr { border: 1px solid #ccc; }
 	
-    #stud-search-table td { 
+    .mobile-table td { 
 		/* Behave  like a "row" */
 		border: none;
 		border-bottom: 1px solid #eee; 
 		position: relative;
 		padding-left: 30%;
+                
     }
-	
-    #stud-search-table td:before { 
+    
+    .mobile-table td:before { 
 		/* Now like a table header */
 		position: absolute;
 		/* Top/left values mimic padding */
@@ -1508,7 +1541,7 @@ screen and (min-device-width : 320px) and (max-device-width : 1024px){
 		padding-right: 10px; 
 		white-space: nowrap;
                 text-align: left;
-	}
+    }
 	
 	/*
 	Label the data
@@ -1520,6 +1553,36 @@ screen and (min-device-width : 320px) and (max-device-width : 1024px){
     #stud-search-table	td:nth-of-type(5):before { content: "Year"; }
     #stud-search-table	td:nth-of-type(6):before { content: "Select"; }
     #stud-search-table	td:nth-of-type(7):before { content: "View"; }
+    
+    #tmtable    td:nth-of-type(1):before { content: "Roll No."; }
+    #tmtable    td:nth-of-type(2):before { content: "Name"; }
+    #tmtable	td:nth-of-type(3):before { content: "T-I"; }
+    #tmtable	td:nth-of-type(4):before { content: "T-II"; }
+    #tmtable	td:nth-of-type(5):before { content: "AGG"; }
+    
+    #viewsy-distribution    td:nth-of-type(1):before { content: "Course Code"; }
+    #viewsy-distribution    td:nth-of-type(2):before { content: "Course Title"; }
+    #viewsy-distribution    td:nth-of-type(3):before { content: "Semester"; }
+    #viewsy-distribution    td:nth-of-type(4):before { content: "IA Marks"; }
+    #viewsy-distribution    td:nth-of-type(5):before { content: "TH Marks"; }
+    #viewsy-distribution    td:nth-of-type(6):before { content: "TW Marks"; }
+    #viewsy-distribution    td:nth-of-type(7):before { content: "PR Marks"; }
+    #viewsy-distribution    td:nth-of-type(8):before { content: "OR Marks"; }
+    #viewsy-distribution    td:nth-of-type(9):before { content: "Total Marks"; }
+    #viewsy-distribution    td:nth-of-type(10):before { content: "TH Credits"; }
+    #viewsy-distribution    td:nth-of-type(11):before { content: "TW/PR Credits"; }
+    #viewsy-distribution    td:nth-of-type(12):before { content: "Tut Credits"; }
+    #viewsy-distribution    td:nth-of-type(13):before { content: "Total Credits"; }
+    
+    .stud-info-table    td:nth-of-type(1):before { content: "Sr. No."; }
+    .stud-info-table    td:nth-of-type(2):before { content: "Roll No"; }
+    .stud-info-table    td:nth-of-type(3):before { content: "Name"; }
+    .stud-info-table    td:nth-of-type(4):before { content: "Address"; }
+    .stud-info-table    td:nth-of-type(5):before { content: "DOA"; }
+    .stud-info-table    td:nth-of-type(6):before { content: "DOB"; }
+    .stud-info-table    td:nth-of-type(7):before { content: "Phone No."; }
+    .stud-info-table    td:nth-of-type(8):before { content: "Email"; }
+    .stud-info-table    td:nth-of-type(9):before { content: "Parents No."; }
 }
 
 /*tablets*/

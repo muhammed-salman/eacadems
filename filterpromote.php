@@ -19,8 +19,8 @@ if($loggedin){
 echo <<<_END
         <div id="left">
 _END;
-echo '<div class="info-box"><div class="full-title-redgrad">Important Guidelines</div>';
-echo '<ul>'
+echo '<div class="info-box"><div class="full-title-redgrad slidebutton">Important Guidelines<span class="arrow-up"></span></div>';
+echo '<ul class="slidebox">'
         .'<li>'.$checkmark.' Student should be Promoted before the beining of each semester.</li>'
         .'<li>'.$checkmark.' Students who are not promoted are dropped.</li>'
         .'<li>'.$checkmark.' Students should be detained only if the termwork is not submitted.</li>'
@@ -64,11 +64,9 @@ echo <<<_END
                         </select>
                 </div>
                 
-                <div>
                    <input type="button" class="button form-button" name="promote" id="promote" value="Proceed to Promote" />
                    <input type="button" class="button form-button" name="detain" id="detain" value="Proceed to Detain" />
-                </div>
-
+               
             </fieldset>
           
         </form>
@@ -82,7 +80,10 @@ else {
 
 }
 
- else echo'<span class="error">Please sign up and/or login to use the system</span>';
+ else{
+     echo'<span class="error">Please sign up and/or login to use the system</span>';
+     header('Refresh:1 ,url=login.php');
+ }
     
     require_once 'functions/footer.php';    
 

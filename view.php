@@ -32,7 +32,8 @@ echo <<<_END
 _END;
                 echo academic_year();
 echo <<<_END
-" readonly="true"/> 
+" readonly="true"/>
+            </div>
             <div>
                 <label class="form-label">Select Subject</label>
                 <select name="vsub" id="vsub" class="teachsub form-input" required>
@@ -44,19 +45,20 @@ echo <<<_END
             <div>
                 <label class="form-label">Select Type</label>
                 <div class="form-input">
-                    <input type="radio" class="viewtype form-radio" name="vthpr" value=1 required><label class="form-label">Theory</label>
-                    <input type="radio" class="viewtype form-radio" name="vthpr" value=0 required><label class="form-label">Practical</label>
+                    <label class="form-label"><input type="radio" class="viewtype form-radio" name="vthpr" value=1 required>Theory</label>
+                    <label class="form-label"><input type="radio" class="viewtype form-radio" name="vthpr" value=0 required>Practical</label>
                 </div>    
             </div>
             <div>
                 <label class="form-label">Select Faculty</label>
                 <select class="form-input" name="vfac" id="vfac" required>
                 </select>
-            <div>
-                   <button class="button form-button" name="viewca" id="viewca" onclick="submitForm('viewca.php')" >View CA</button>
-                   <button class="button form-button" name="viewprint" id="viewprint" onclick="submitForm('printpp.php')">View Prac Plan</button>
-                   <button class="button form-button" name="viewtlo" id="viewtlo" onclick="submitForm('viewtlo.php')">View TLO</button>
             </div>
+
+            <button class="button form-button" name="viewca" id="viewca" onclick="submitForm('viewca.php')" >View CA</button>
+            <button class="button form-button" name="viewprint" id="viewprint" onclick="submitForm('printpp.php')">View Prac Plan</button>
+            <button class="button form-button" name="viewtlo" id="viewtlo" onclick="submitForm('viewtlo.php')">View TLO</button>
+            
            </fieldset>
 _END;
         echo '<input type="hidden" id="uppcourse" name="uppcourse" value=""/>';
@@ -68,7 +70,7 @@ _END;
         echo '<input type="hidden" id="cayear" name="cayear" value="'.academic_year().'"/>';
         echo '<input type="hidden" id="title" name="title" value=""/>';
         echo '<input type="hidden" id="ffac_id" name="ffac_id" value=""/>';
-        
+        echo '</form>';
         echo '</div>';
          
      }

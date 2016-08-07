@@ -26,10 +26,10 @@ _END;
 echo '<div class="info-box"><div class="full-title-redgrad slidebutton">Important Guidelines<span class="arrow-up"></span></div>'
         . '<ul class="slidebox">'
             .'<li>'.$checkmark.' See University Syllabus copy for course id.</li>'
-            .'<li>'.$checkmark.' For departments with <y>Two Shifts</y> a course has to be created <y>Two times</y> one for each shift.</li>'
+            .'<li>'.$checkmark.' For departments with <mark>Two Shifts</mark> a course has to be created <mark>Two times</mark> one for each shift.</li>'
             .'<li>'. 'Example: for CIVIL department Cousre- ID: CE-C301 Title: Applied Mathematics-III should be entered as </li>'
-            .'<li>'. 'For <y>SHIFT-I</y>:-</li><li>Course ID: <y>CE-C301-S1</y> </li>Title: <y>Applied Mathematics-III-S1</y></li>'
-            .'<li>'. 'For <y>SHIFT-II</y>:-</li><li>Course ID: <y>CE-C301-S2</y> </li>Title: <y>Applied Mathematics-III-S2</y></li>'
+            .'<li>'. 'For <mark>SHIFT-I</mark>:-</li><li>Course ID: <mark>CE-C301-S1</mark> </li>Title: <mark>Applied Mathematics-III-S1</mark></li>'
+            .'<li>'. 'For <mark>SHIFT-II</mark>:-</li><li>Course ID: <mark>CE-C301-S2</mark> </li>Title: <mark>Applied Mathematics-III-S2</mark></li>'
             .'<li>'. 'Abbreviation could be same</li>'
             .'<li>'.$checkmark.' Revision indicates the year in which the syllabus is revised.</li>'
         . '</ul>'
@@ -134,10 +134,8 @@ _END;
 echo <<<_END
                         </select>
                     </label>
-                </div>                    
-                <div>
-                    <input type="submit" class="button form-button" value="Create Course" >
-                </div>
+                </div> 
+                <input type="submit" class="button form-button" value="Create Course" >
             </fieldset>
           
         </form>
@@ -145,12 +143,15 @@ echo <<<_END
 _END;
 }
 else {
-      echo '<br><br><span class="error">Access Denied! You are not authorized to view this section</span>';    
+      echo '<span class="error">Access Denied! You are not authorized to view this section</span>';    
 }
 
 }
 
- else echo'<br><br><span class="error">Please sign up and/or login to use the system</span>';
+ else{
+     echo'<span class="error">Please sign up and/or login to use the system</span>';
+     header('Refresh:1 ,url=login.php');
+ }
  
         require_once 'functions/footer.php';
 ?>

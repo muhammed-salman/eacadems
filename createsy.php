@@ -18,8 +18,8 @@ if($loggedin){
 ?>
     <div id="left">
 <?php
-echo '<div class="info-box"><div class="full-title-redgrad">Important Guidelines</div>';
-echo '<ul>'
+echo '<div class="info-box"><div class="full-title-redgrad slidebutton">Important Guidelines<span class="arrow-up"></span></div>';
+echo '<ul class="slidebox">'
         . '<li>'.$checkmark.' No of Modules does not mean number of chapters</li>'
         .'<li>'.$checkmark.' No of Modules entry should be taken from University Syllabus copy.</li>'
     . '</ul>'
@@ -46,9 +46,7 @@ echo '<ul>'
                 <label class="form-label">No of Modules</label>
                 <input class="form-input" type="text" name="cschap" id="cschap" value="" placeholder="Ex: 5" required disabled="disabled">  
            </div>
-           <div>
-                <input type="submit" class="button form-button" value="Create">
-            </div>
+           <input type="submit" class="button form-button" value="Create">
          </fieldset>
         
      </form>
@@ -61,6 +59,8 @@ echo '<ul>'
 }
 
 }
-
- else echo'<span class="error">Please sign up and/or login to use the system</span>';
+ else{
+     echo'<span class="error">Please sign up and/or login to use the system</span>';
+     header('Refresh:1 ,url=login.php');
+ }
 require_once 'functions/footer.php'; ?>

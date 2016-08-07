@@ -1,3 +1,4 @@
+
 <?php
 
 /*                                             License
@@ -19,11 +20,11 @@ if($loggedin){
 insertUser();  
 echo '<div id="left">';
 echo '<div class="info-box">'
-        . '<div class="full-title-redgrad">Important Guidelines</div>'
-            . '<ul>'
+        . '<div class="full-title-redgrad slidebutton">Important Guidelines<span class="arrow-up"></span></div>'
+            . '<ul class="slidebox">'
                 .'<li>'.$checkmark.' All username\'s should follow a standard naming scheme.</li>'
                 .'<li>'.$checkmark.' Please do not assign username randomly.</li>'
-                .'<li>'.$checkmark.' It is recommended that username is based on First Name and Surname of person seprated by period ( . ).</li>'
+                .'<li>'.$checkmark.' It is recommended that username is based on First Name and Surname of person seprated by underscore ( _ ).</li>'
                 .'<li>'.$checkmark.' Password should be minimum of 8 characters and must have atleast one of each of the following'
                     . 'UPPERCASE alphabet,lowercase alphabet,digits and special characters such as @ # $ & * ! etc .</li>'
             . '</ul>'
@@ -48,8 +49,9 @@ echo <<<_END
                 <label class="form-label">Select Faculty/Staff</label>
                 <select name="cufsname" class="facstaff form-input" required>
                     <option value="">-----</option>
-                    </select><span id="cufserr" class="inline-error"></span>
+                    </select>
             </div>
+            <div><span id="cufserr" class="inline-error"></div>
             <div>
                 <label class="form-label">Enter Username</label>
                 <input class="form-input" type="text" placeholder="Min 5 characters" id="user" name="user" disabled="true" required><span id="usererr"></span>
@@ -72,9 +74,7 @@ if($_SESSION['grid']==='3')
 echo <<<_END
                   </select>
             </div>
-            <div>
-                <input type="submit" class="button form-button" value="Create Account"> 
-            </div>
+            <input type="submit" class="button form-button" value="Create Account"> 
         
         </fieldset>
         </form>
@@ -87,8 +87,10 @@ else {
 }
 
 }
-
- else echo'<span class="error">Please sign up and/or login to use the system</span>';
+ else{
+     echo'<span class="error">Please sign up and/or login to use the system</span>';
+     header('Refresh:1 ,url=login.php');
+ }
 require_once 'functions/footer.php';
 ?>
         

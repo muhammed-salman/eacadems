@@ -121,14 +121,13 @@ _END;
 }
  
 else {
-    echo '<br><span class="error">Data Not Posted</span>';
+    echo '<span class="error">Data Not Posted</span>';
      header("Refresh: 0; url=index.php");
 }
 }
 else {
-     echo'<br><br><center><span class="error">Please sign up and/or login to use the system</span></center>';
-    
+     echo'<center><span class="error">Please sign up and/or login to use the system</span></center>';
+     header('Refresh:1 ,url=login.php');
 }
-
 require_once 'functions/footer.php';
 ?>
