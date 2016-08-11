@@ -16,8 +16,8 @@
 require_once 'functions/header.php';
      if($loggedin)
      {
-         if($_SESSION['grid']==='3'||$_SESSION['grid']==='5'||$_SESSION['grid']==='2'||
-                     $_SESSION['grid']==='7'||$_SESSION['grid']==='1'){
+         if($_SESSION['grid']==='5'||$_SESSION['grid']==='2'||
+                     $_SESSION['grid']==='7'){
              
 echo <<<_END
     <div id="left">

@@ -39,8 +39,7 @@ echo <<<_END
                 <legend class="fit-title-blackgrad">Semester Examination Entry</legend>
                 <div>
                     <label class="form-label">Previous Year</label>
-                    <label class="form-label">
-                        <input class="form-input" type="text" name="gyear" id="gyear" readonly="true" required="true" value="
+                    <input class="form-input" type="text" name="gyear" id="gyear" readonly="true" required="true" value="
 _END;
                             echo prev_academic_year();
 echo <<<_END
@@ -48,7 +47,7 @@ echo <<<_END
                 </div>
                 <div>
                     <label class="form-label">Select Department</label>
-                    <label class="form-label"><select class="form-input" name="gdept" id="gdept" required>
+                    <select class="form-input" name="gdept" id="gdept" required>
 _END;
                         loadDept(1);
 echo <<<_END
@@ -96,9 +95,8 @@ echo <<<_END
                     <label class="form-label">Internal Assessment Marks</label>
                     <input class="form-input" type="number" placeholder="IA" min="-1" max="20" name="gia" value="" required>
                 </div>
-                <div>
-                    <input type="submit" class="button form-button" value="Submit">
-                </div>
+                <input type="submit" class="button form-button" value="Submit">
+                
             </fieldset>
         </form>
       

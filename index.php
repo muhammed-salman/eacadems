@@ -117,25 +117,25 @@ if($loggedin){
              if($_SESSION['grid']==='3'||$_SESSION['grid']==='7'||$_SESSION['grid']==='2'||$_SESSION['grid']==='6'){
                 echo '<a href="filterpromote.php"><img src="icons/promote.png" ><br>Promote / Detain</a>';
              }
-             if($_SESSION['grid']==='3'||$_SESSION['grid']==='5'||$_SESSION['grid']==='2'){
+             if($_SESSION['grid']==='5'||$_SESSION['grid']==='2'){
                 echo '<a href="test.php"><img src="icons/testmarks.png" ><br>Test Marks</a>';
              }
              if($_SESSION['grid']==='3'||$_SESSION['grid']==='6'){
                 echo '<a href="grade.php"><img src="icons/grade.png" ><br>Semester Marks</a>';
              }
-             if($_SESSION['grid']==='3'||$_SESSION['grid']==='5'||$_SESSION['grid']==='2'){
+             if($_SESSION['grid']==='5'||$_SESSION['grid']==='2'){
                 echo '<a href="filteratt.php"><img src="icons/attendence.png" ><br>Mark Attendence</a>';
              }
-             if($_SESSION['grid']==='3'||$_SESSION['grid']==='5'||$_SESSION['grid']==='2'){
+             if($_SESSION['grid']==='5'||$_SESSION['grid']==='2'){
                 echo '<a href="createpp.php"><img src="icons/planning.png" ><br>Create Practical</a>';
              }
-             if($_SESSION['grid']==='3'||$_SESSION['grid']==='5'||$_SESSION['grid']==='2'){
+             if($_SESSION['grid']==='5'||$_SESSION['grid']==='2'){
                 echo '<a href="filterpp.php"><img src="icons/updateplan.png" ><br>Manage Practical</a>';
              }
-             if($_SESSION['grid']==='3'||$_SESSION['grid']==='5'||$_SESSION['grid']==='2'){
+             if($_SESSION['grid']==='5'||$_SESSION['grid']==='2'){
                 echo '<a href="tlo.php"><img src="icons/tlo.png" ><br>Manage TLO</a>';
              }
-             if($_SESSION['grid']==='3'||$_SESSION['grid']==='5'||$_SESSION['grid']==='2'){
+             if($_SESSION['grid']==='5'||$_SESSION['grid']==='2'){
                 echo '<a href="CA.php"><img src="icons/ca.png" ><br>Continuous Assesment</a>';
              }
              if($_SESSION['grid']==='3'||$_SESSION['grid']==='7'){
@@ -148,14 +148,14 @@ if($loggedin){
                      $_SESSION['grid']==='7'||$_SESSION['grid']==='1'||$_SESSION['grid']==='9'){
                 echo '<a href="filterstudinfo.php"><img src="icons/info.png" ><br>Students Info</a>';
              }
-             if($_SESSION['grid']==='3'||$_SESSION['grid']==='5'||$_SESSION['grid']==='2'||
+             if($_SESSION['grid']==='5'||$_SESSION['grid']==='2'||
                      $_SESSION['grid']==='7'||$_SESSION['grid']==='1'){
                 echo '<a href="filterdefaulter.php"><img src="icons/defaulter.png" ><br>Defaulter List</a>';
              }
-             if($_SESSION['grid']==='3'||$_SESSION['grid']==='2'){
+             if($_SESSION['grid']==='2'){
                 echo '<a href="view.php"><img src="icons/viewcaplan.png" ><br>View CA & Plans</a>';
              }
-            if($_SESSION['grid']==='3'||$_SESSION['grid']==='7'||$_SESSION['grid']==='2'){
+            if($_SESSION['grid']==='7'||$_SESSION['grid']==='2'){
                 echo '<a href="viewtest.php"><img src="icons/viewtest.png" ><br>Class TM</a>';
              }
             if($_SESSION['grid']==='3'||$_SESSION['grid']==='5'||$_SESSION['grid']==='2'){

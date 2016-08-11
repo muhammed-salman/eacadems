@@ -16,7 +16,7 @@
 require_once 'functions/header.php';
         
 if($loggedin){
-    if($_SESSION['grid']==='3'||$_SESSION['grid']==='5'||$_SESSION['grid']==='2'){
+    if($_SESSION['grid']==='5'||$_SESSION['grid']==='2'){
         
     insertCASheets();
 echo '<div id="left">';    

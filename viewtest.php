@@ -15,7 +15,7 @@
 */
 require_once 'functions/header.php';
      if($loggedin){
-         if($_SESSION['grid']==='3'||$_SESSION['grid']==='7'||$_SESSION['grid']==='2'){
+         if($_SESSION['grid']==='7'||$_SESSION['grid']==='2'){
 echo <<<_END
        
     <div id="wrapper" name="wrapper"  style="overflow-x:auto;">    

@@ -44,7 +44,12 @@ comment end --!>
                     
                         <select   name="afaculty" id="afaculty" required class="form-input"  >
 _END;
+                    if($_SESSION['grid']!=='3'){
                         loadFaculty(1);
+                    }
+                    else {
+                        loadFaculty();
+                    }
                                                 
 echo <<<_END
                         </select>
@@ -101,9 +106,7 @@ echo <<<_END
                         <label class="form-label"><input type="checkbox" class="acheck form-check" disabled="disabled" id="ab4" name="ab4" value="1"/>B4</label>
                     </span>    
                 </div>
-                <div>
                     <input type="submit" class="button form-button" value="Assign Course">
-                </div>
             </fieldset>
               <input type="hidden" name="ab0" id="ab0" value="0" />
         </form>

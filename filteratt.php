@@ -15,7 +15,7 @@
 require_once 'functions/header.php';
 if($loggedin)
 { 
-    if($_SESSION['grid']==='3'||$_SESSION['grid']==='5'||$_SESSION['grid']==='2'){
+    if($_SESSION['grid']==='5'||$_SESSION['grid']==='2'){
     
 echo '<div id="left">';
 echo '<div class="info-box"><div class="full-title-redgrad slidebutton">Important Guidelines<span class="arrow-up"></span></div>';
