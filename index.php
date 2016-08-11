@@ -149,7 +149,7 @@ if($loggedin){
                 echo '<a href="filterstudinfo.php"><img src="icons/info.png" ><br>Students Info</a>';
              }
              if($_SESSION['grid']==='5'||$_SESSION['grid']==='2'||
-                     $_SESSION['grid']==='7'||$_SESSION['grid']==='1'){
+                     $_SESSION['grid']==='7'){
                 echo '<a href="filterdefaulter.php"><img src="icons/defaulter.png" ><br>Defaulter List</a>';
              }
              if($_SESSION['grid']==='2'){

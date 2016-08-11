@@ -54,7 +54,10 @@ echo <<<_END
             <div><span id="cufserr" class="inline-error"></div>
             <div>
                 <label class="form-label">Enter Username</label>
-                <input class="form-input" type="text" placeholder="Min 5 characters" id="user" name="user" disabled="true" required><span id="usererr"></span>
+                <input class="form-input" type="text" placeholder="Min 5 characters" id="user" name="user" disabled="true" required>
+            </div>
+            <div>
+                <span id="usererr" style="width:96%;"></span>
             </div>
             <div>
                 <label class="form-label">Enter Password</label>
@@ -62,7 +65,10 @@ echo <<<_END
             </div>
             <div>
                 <label class="form-label">Confirm Password</label>
-                <input class="form-input" type="password" id="cpass" placeholder="Repeat Password" name="cpass" required><span id="cpasserr"></span>
+                <input class="form-input" type="password" id="cpass" placeholder="Repeat Password" name="cpass" required>
+            </div>
+            <div>
+                <span id="cpasserr" style="width:96%;"></span>
             </div>
             <div>
               <label class="form-label">Select Type</label>

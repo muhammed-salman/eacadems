@@ -495,7 +495,7 @@ function insertFacultyStaff(){
                 "('$cfsfacid','','','','','','','','','','','','','','','','','','$img_id')";
             queryMysql($query);
             //echo ''.$query;
-            echo '<div class="success">You are Successfully Registered</div>';   
+            //echo '<div class="success">You are Successfully Registered</div>';   
             echo '<script language="javascript">';
                 echo 'alert("Record Successfully Inserted!\n'.
                 'You will be redirected to Faculty \\ Staff creation page.")';

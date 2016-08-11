@@ -1353,6 +1353,15 @@ fieldset.form>span.show>div{
     cursor:grab;
 }
 
+#ui-datepicker-div select{
+    
+        font-size: 1rem;
+       
+}
+
+input[type="file"]{
+}
+
 /*mobile*/
 @media 
 screen and (min-width: 320px) and (max-width: 1024px) ,

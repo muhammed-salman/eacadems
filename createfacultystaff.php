@@ -110,11 +110,11 @@ echo <<<_END
             </div>
             <div>    
                 <label class="form-label">Date of Joining</label>  
-                <input class="form-input" type="text" class="datepicker" placeholder="dd/mm/yyyy" name="cfsdoj"  required>
+                <input class="form-input datepicker" type="text" placeholder="dd/mm/yyyy" name="cfsdoj"  required>
             </div>
             <div>
                <label class="form-label">Date of Birth</label>
-   <input class="form-input" type="text" class="datepicker" placeholder="dd/mm/yyyy" name="cfsdob" required>
+               <input class="form-input datepicker" type="text" placeholder="dd/mm/yyyy" name="cfsdob" required>
             </div>
             
             <div>
@@ -139,7 +139,7 @@ echo <<<_END
             <div>
                 <label class="form-label">Upload Photo[<font size="2">Max Size 3 MB</font>]</label>    
                 
-                    <input class="form-input" type="file" name="image" required="true"/>
+                <input class="form-input" type="file" name="image" required="true"/>
             </div>
             <input type="submit" class="button form-button" value="Register">
             
