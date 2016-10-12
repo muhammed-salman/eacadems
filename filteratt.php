@@ -59,7 +59,7 @@ echo <<<_END
             </div>
             <div>
                 <label class="form-label">Date of Lecture</label>
-                <input class="form-input" type="text"  name="fdol" required value="
+                <input class="form-input datepicker" type="text" readonly="readonly" name="fdol" required value="
 _END;
 echo date('d/m/Y');
 echo <<<_END

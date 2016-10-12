@@ -80,7 +80,7 @@ if($loggedin){
         . "});});</script>";
      echo '<script>$(function(){$("#datepicker").datepicker();});</script>';
 
-if(!$loggedin){
+     if(!$loggedin){
     echo '<div class="banner">Welcome To '.$appname.'</div>';
 }
 echo '</div>';
@@ -92,4 +92,4 @@ echo '<div class="container">';
 else{
     echo '<div class="container" style="flex-direction: row;">';
 }
-?>
+?>  

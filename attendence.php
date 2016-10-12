@@ -13,7 +13,7 @@
 */
 
 require_once 'functions/header.php';
-markAttendence();
+//markAttendence();
 if($loggedin)
 {
 if($_POST)
